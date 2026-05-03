@@ -50,7 +50,7 @@ export default function Products() {
         <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🛠️</div>
         <h3 style={{ color: 'white', fontSize: '1.8rem', marginBottom: '1rem' }}>Bespoke Custom Solutions</h3>
         <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto 2.5rem', lineHeight: '1.7', fontFamily: 'Outfit' }}>
-          Don't see your specific requirement? We specialize in custom PTFE formulations, precision-machined parts, and bespoke industrial components tailored to your engineering drawings.
+          Don&apos;t see your specific requirement? We specialize in custom PTFE formulations, precision-machined parts, and bespoke industrial components tailored to your engineering drawings.
         </p>
         <Link href="/contact" className="btn btn-primary" style={{ padding: '1rem 3rem' }}>Request Custom Quote</Link>
       </div>

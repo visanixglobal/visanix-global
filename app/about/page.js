@@ -31,7 +31,7 @@ export default function About() {
           <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '3px', fontSize: '0.75rem' }}>Our Heritage</span>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginTop: '1.25rem', marginBottom: '1.5rem' }}>Precision & <span className="gradient-text">Purpose</span></h1>
           <p style={{ maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem', color: 'rgba(255,255,255,0.9)', fontFamily: 'Outfit, sans-serif' }}>
-            Visanix Global is more than a supplier; we are strategic industrial solution partners for the world's most critical industries.
+            Visanix Global is more than a supplier; we are strategic industrial solution partners for the world&apos;s most critical industries.
           </p>
         </div>
       </section>

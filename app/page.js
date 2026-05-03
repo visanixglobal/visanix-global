@@ -3,13 +3,12 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import CTASection from '@/components/CTASection';
 
+const rotatingTexts = ["Industrial Goods", "Polymer Solutions", "Engineered Parts", "Bespoke Components"];
+const slideImages = ["/hd-1.jpg", "/ptfe-rod-hd.jpg", "/ptfe-flexible-sheet.jpg"];
+
 export default function Home() {
   const [textIndex, setTextIndex] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
-  
-  const rotatingTexts = ["Industrial Goods", "Polymer Solutions", "Engineered Parts", "Bespoke Components"];
-  // Updated slideshow with PTFE Rod HD and PTFE Custom as requested
-  const slideImages = ["/hd-1.jpg", "/ptfe-rod-hd.jpg", "/ptfe-flexible-sheet.jpg"];
 
   useEffect(() => {
     const textTimer = setInterval(() => {
@@ -24,7 +23,7 @@ export default function Home() {
       clearInterval(textTimer);
       clearInterval(slideTimer);
     };
-  }, [slideImages.length]);
+  }, [rotatingTexts.length, slideImages.length]);
 
   const currentImage = slideImages[slideIndex] || slideImages[0];
 
