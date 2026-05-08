@@ -80,7 +80,7 @@ const sahilEmail = "sahil@visanixglobal.com";
 
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '5rem', alignItems: 'flex-start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'flex-start' }}>
             {/* Form Area */}
             <div className="glass-card" style={{ padding: '3rem', background: 'var(--bg-light)', border: 'none' }}>
               {isSubmitted ? (

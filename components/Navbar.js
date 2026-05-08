@@ -43,12 +43,12 @@ export default function Navbar() {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'space-between',
-        padding: '0 2rem'
+        padding: '0 1rem'
       }}>
         {/* Logo Lockup */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', textDecoration: 'none', zIndex: 1100 }}>
-          <img src="/Logo only.png" alt="Visanix Global Logo" style={{ height: '70px', width: 'auto', filter: 'brightness(1.2)' }} />
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: '6px' }}>
+          <img src="/Logo only.png" alt="Visanix Global Logo" className="navbar-logo" style={{ height: '70px', width: 'auto', filter: 'brightness(1.2)' }} />
+          <div className="brand-text-container" style={{ display: 'flex', flexDirection: 'column', marginTop: '6px' }}>
             <div className={outfit.className} style={{ fontSize: '1.4rem', color: 'white', letterSpacing: '0.8px', textTransform: 'uppercase', lineHeight: '1' }}>
               <span style={{ fontWeight: '800' }}>VISANIX</span> <span style={{ color: 'var(--accent)', fontWeight: '600', textTransform: 'none' }}>Global</span>
             </div>
@@ -74,6 +74,11 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div style={{ display: 'none', gap: '2rem', alignItems: 'center' }} className="desktop-menu">
           <style jsx>{`
+            @media (max-width: 480px) {
+              .navbar-logo { height: 45px !important; }
+              .brand-text-container { transform: scale(0.85); transform-origin: left center; }
+            }
+
             @media (min-width: 1024px) {
               .desktop-menu { display: flex !important; }
               .mobile-toggle { display: none !important; }

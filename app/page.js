@@ -133,22 +133,28 @@ export default function Home() {
 
         {/* Floating Stat badges */}
         <div className="container" style={{ position: 'absolute', bottom: '50px', left: '0', right: '0', zIndex: 4 }}>
-          <div style={{ 
+          <div className="stats-container" style={{ 
             display: 'flex', 
             justifyContent: 'center',
-            gap: '6rem', 
+            gap: '2rem', 
             opacity: 0.7, 
             borderTop: '1px solid rgba(255,255,255,0.08)', 
             paddingTop: '40px',
             maxWidth: '1000px',
-            margin: '0 auto'
+            margin: '0 auto',
+            flexWrap: 'wrap'
           }}>
+            <style jsx>{`
+              @media (min-width: 768px) {
+                .stats-container { gap: 6rem !important; }
+              }
+            `}</style>
             {[
-              { val: '50+', label: 'Global Clients' },
+              { val: 'Reliable', label: 'Global Network' },
               { val: '100%', label: 'Quality Assured' },
               { val: 'ISO', label: 'Certified' }
             ].map((stat, i) => (
-              <div key={i} style={{ textAlign: 'center' }}>
+              <div key={i} style={{ textAlign: 'center', minWidth: '80px' }}>
                 <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'white' }}>{stat.val}</div>
                 <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--accent)', fontWeight: '700', marginTop: '4px' }}>{stat.label}</div>
               </div>
@@ -160,7 +166,7 @@ export default function Home() {
       {/* Industrial Goods Strategy Section with HD Rod and Custom Slideshow */}
       <section className="section-padding" style={{ background: 'white', position: 'relative' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <div style={{
                 width: '100%',
@@ -271,25 +277,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Expertise Section */}
+      {/* The Visanix Advantage - Replacing Industrial Expertise */}
       <section className="section-padding bg-grid" style={{ background: 'var(--bg-light)' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '2px' }}>Core Divisions</span>
-            <h2 style={{ fontSize: '3rem', marginTop: '1rem' }}>Industrial <span style={{ color: 'var(--secondary)' }}>Expertise.</span></h2>
+            <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '2px' }}>Why Partner With Us</span>
+            <h2 style={{ fontSize: '3rem', marginTop: '1rem' }}>The Visanix <span style={{ color: 'var(--secondary)' }}>Advantage.</span></h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {[
-              { title: 'PTFE Division', desc: 'Specialized high-performance polymers for extreme industrial environments.', icon: '🧪' },
-              { title: 'Industrial Sealing', desc: 'Bespoke gaskets, rings, and components for critical machinery.', icon: '⚙️' },
-              { title: 'Global Logistics', desc: 'Integrated supply chain and export services for international partners.', icon: '🌐' }
+              { title: 'Material Science', desc: 'Expertise in high-performance polymers and PTFE engineering for extreme industrial environments.', icon: '🔬' },
+              { title: 'Global Precision', desc: 'Strategic sourcing and integrated logistics ensuring your components arrive on time, anywhere in the world.', icon: '🌍' },
+              { title: 'Certified Quality', desc: 'Rigorous ISO-compliant testing and full material traceability for every part we deliver.', icon: '🛡️' }
             ].map((feat, i) => (
-              <div key={i} className="glass-card" style={{ padding: '3rem', textAlign: 'center' }}>
-                <div style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>{feat.icon}</div>
-                <h3 style={{ fontSize: '1.6rem', marginBottom: '1.25rem' }}>{feat.title}</h3>
-                <p style={{ marginBottom: '2.5rem', fontSize: '1rem', fontFamily: 'Outfit, sans-serif', lineHeight: '1.6', opacity: 0.8 }}>{feat.desc}</p>
-                <Link href="/products" style={{ fontWeight: '800', color: 'var(--primary)', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Explore Division →</Link>
+              <div key={i} className="glass-card" style={{ padding: '3.5rem 2.5rem', textAlign: 'center', background: 'white' }}>
+                <div style={{ 
+                  width: '80px', height: '80px', 
+                  background: 'var(--bg-light)', 
+                  borderRadius: '20px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  fontSize: '2.5rem', 
+                  margin: '0 auto 2.5rem',
+                  border: '1px solid var(--border)'
+                }}>
+                  {feat.icon}
+                </div>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '1.25rem' }}>{feat.title}</h3>
+                <p style={{ marginBottom: '2.5rem', fontSize: '0.95rem', fontFamily: 'Outfit, sans-serif', lineHeight: '1.7', opacity: 0.7 }}>{feat.desc}</p>
+                <Link href="/about" style={{ 
+                  fontWeight: '800', 
+                  color: 'var(--primary)', 
+                  fontSize: '0.7rem', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '1.5px',
+                  borderBottom: '2px solid var(--accent)',
+                  paddingBottom: '4px'
+                }}>
+                  Learn More
+                </Link>
               </div>
             ))}
           </div>
@@ -299,7 +327,7 @@ export default function Home() {
       {/* Heritage Section */}
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>
               <span style={{ 
                 color: 'var(--accent)', 

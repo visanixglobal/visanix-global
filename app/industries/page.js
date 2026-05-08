@@ -42,7 +42,7 @@ export default function Industries() {
       {/* Industry Grid */}
       <section className="section-padding bg-grid">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
             {industries.map((ind, i) => (
               <div key={i} className="glass-card" style={{ padding: '3rem', borderBottom: '4px solid transparent', transition: 'all 0.4s ease' }}>
                 <div style={{ fontSize: '3rem', marginBottom: '2rem' }}>{ind.icon}</div>
