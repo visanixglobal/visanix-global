@@ -88,7 +88,7 @@ export default function Industries() {
           }}>
             Whether you need custom PTFE components or bulk industrial goods, our technical team is ready to support your requirements.
           </p>
-          <Link href="/contact" className="btn btn-primary" style={{ padding: '1.2rem 3rem' }}>Partner with Visanix</Link>
+          <Link href="/contact" className="btn btn-primary" style={{ padding: '1.2rem 3rem' }}>Partner with Visanix <span style={{ fontFamily: "'Montserrat', sans-serif", marginLeft: '4px' }}>Global</span></Link>
         </div>
       </section>
     </div>

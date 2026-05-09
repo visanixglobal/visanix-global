@@ -47,10 +47,10 @@ export default function Navbar() {
       }}>
         {/* Logo Lockup */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', textDecoration: 'none', zIndex: 1100 }}>
-          <img src="/Logo only.png" alt="Visanix Global Logo" className="navbar-logo" style={{ height: '70px', width: 'auto', filter: 'brightness(1.2)' }} />
+          <img src="/Logo only.png" alt="Visanix Global Logo" className="navbar-logo" style={{ height: '70px', width: 'auto', filter: 'brightness(1.2)', marginTop: '-4px' }} />
           <div className="brand-text-container" style={{ display: 'flex', flexDirection: 'column', marginTop: '6px' }}>
             <div className={outfit.className} style={{ fontSize: '1.4rem', color: 'white', letterSpacing: '0.8px', textTransform: 'uppercase', lineHeight: '1' }}>
-              <span style={{ fontWeight: '800' }}>VISANIX</span> <span style={{ color: 'var(--accent)', fontWeight: '600', textTransform: 'none' }}>Global</span>
+              <span style={{ fontWeight: '800' }}>VISANIX</span> <span style={{ color: 'var(--accent)', fontWeight: '600', textTransform: 'none', fontFamily: "'Montserrat', sans-serif" }}>Global</span>
             </div>
             <div style={{
               fontSize: '0.32rem',

@@ -49,7 +49,7 @@ export default function Footer() {
                 <img src="/Logo only.png" alt="Visanix Global Logo" style={{ height: '80px', width: 'auto' }} />
                 <div style={{ display: 'flex', flexDirection: 'column', marginTop: '10px' }}>
                   <div style={{ fontSize: '1.6rem', color: 'white', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: '800', lineHeight: '1' }}>
-                    VISANIX <span style={{ color: 'var(--accent)', fontWeight: '600', textTransform: 'none' }}>Global</span>
+                    VISANIX <span style={{ color: 'var(--accent)', fontWeight: '600', textTransform: 'none', fontFamily: "'Montserrat', sans-serif" }}>Global</span>
                   </div>
                   <div style={{
                     fontSize: '0.31rem',
@@ -193,7 +193,7 @@ export default function Footer() {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
             <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.25)', margin: 0 }}>
-              © 2026 Visanix Global. All Rights Reserved. 
+              © 2026 Visanix <span style={{ fontFamily: "'Montserrat', sans-serif" }}>Global</span>. All Rights Reserved. 
               <span style={{ margin: '0 1rem', opacity: 0.2 }}>|</span>
               Designed for Industrial Excellence
             </p>

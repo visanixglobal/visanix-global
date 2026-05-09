@@ -31,7 +31,7 @@ export default function About() {
           <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '3px', fontSize: '0.75rem' }}>Our Heritage</span>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginTop: '1.25rem', marginBottom: '1.5rem' }}>Precision & <span className="gradient-text">Purpose</span></h1>
           <p style={{ maxWidth: '700px', margin: '0 auto', fontSize: '1.1rem', color: 'rgba(255,255,255,0.9)', fontFamily: 'Outfit, sans-serif' }}>
-            Visanix Global is more than a supplier; we are strategic industrial solution partners for the world&apos;s most critical industries.
+            Visanix <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '600' }}>Global</span> is more than a supplier; we are strategic industrial solution partners for the world&apos;s most critical industries.
           </p>
         </div>
       </section>
@@ -43,7 +43,7 @@ export default function About() {
             <div>
               <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', marginBottom: '1.5rem' }}>Built on <span style={{ color: 'var(--accent)' }}>Trust</span>.</h2>
               <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-muted)', fontFamily: 'Outfit' }}>
-                Founded as a premier trading house, Visanix Global has evolved into a leading provider of engineered industrial solutions. Our journey is defined by a relentless commitment to quality, technical expertise, and a roadmap towards integrated manufacturing.
+                Founded as a premier trading house, Visanix <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '600' }}>Global</span> has evolved into a leading provider of engineered industrial solutions. Our journey is defined by a relentless commitment to quality, technical expertise, and a roadmap towards integrated manufacturing.
               </p>
               <div style={{ marginTop: '2.5rem' }}>
                 <div style={{ borderLeft: '4px solid var(--accent)', paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
@@ -104,7 +104,7 @@ export default function About() {
         </div>
       </section>
 
-      <CTASection title="Partner with Visanix Global" subtitle="Experience the synergy of technical mastery and global logistics excellence for your next industrial project." />
+      <CTASection title={<>Partner with Visanix <span style={{ fontFamily: "'Montserrat', sans-serif" }}>Global</span></>} subtitle="Experience the synergy of technical mastery and global logistics excellence for your next industrial project." />
     </div>
   );
 }

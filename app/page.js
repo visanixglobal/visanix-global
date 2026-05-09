@@ -108,7 +108,7 @@ export default function Home() {
               fontWeight: '500',
               letterSpacing: '0.3px'
             }}>
-              Visanix Global is your strategic partner for high-performance industrial goods, <strong style={{ color: 'var(--accent)', fontWeight: '800' }}>specialized PTFE & polymer engineering</strong>, and integrated supply chain solutions across the globe.
+              Visanix <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '600' }}>Global</span> is your strategic partner for high-performance industrial goods, <strong style={{ color: 'var(--accent)', fontWeight: '800' }}>specialized PTFE & polymer engineering</strong>, and integrated supply chain solutions across the globe.
             </p>
             
             <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
