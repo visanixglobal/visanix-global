@@ -66,7 +66,7 @@ export default function Home() {
           zIndex: 2
         }}></div>
 
-        <div className="container" style={{ position: 'relative', zIndex: 3 }}>
+        <div className="container" style={{ position: 'relative', zIndex: 10 }}>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
               <span style={{ height: '1px', width: '30px', background: 'var(--accent)' }}></span>
@@ -111,7 +111,7 @@ export default function Home() {
               Visanix <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '600' }}>Global</span> is your strategic partner for high-performance industrial goods, <strong style={{ color: 'var(--accent)', fontWeight: '800' }}>specialized PTFE & polymer engineering</strong>, and integrated supply chain solutions across the globe.
             </p>
             
-            <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 11 }}>
               <Link href="/products" className="btn btn-primary" style={{ padding: '1.2rem 3.5rem' }}>Our Portfolio</Link>
               <Link href="/contact" style={{ 
                 color: 'white', 
@@ -123,7 +123,9 @@ export default function Home() {
                 alignItems: 'center',
                 gap: '0.75rem',
                 borderBottom: '1px solid rgba(252, 191, 73, 0.3)',
-                paddingBottom: '4px'
+                paddingBottom: '4px',
+                paddingTop: '4px',
+                minHeight: '44px' // Ensure minimum touch target height
               }}>
                 Consult an Expert <span style={{ color: 'var(--accent)', fontSize: '1.2rem' }}>→</span>
               </Link>
@@ -132,7 +134,7 @@ export default function Home() {
         </div>
 
         {/* Floating Stat badges */}
-        <div className="container" style={{ position: 'absolute', bottom: '50px', left: '0', right: '0', zIndex: 4 }}>
+        <div className="container" style={{ position: 'absolute', bottom: '50px', left: '0', right: '0', zIndex: 4, pointerEvents: 'none' }}>
           <div className="stats-container" style={{ 
             display: 'flex', 
             justifyContent: 'center',
@@ -142,7 +144,8 @@ export default function Home() {
             paddingTop: '40px',
             maxWidth: '1000px',
             margin: '0 auto',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            pointerEvents: 'none'
           }}>
             <style jsx>{`
               @media (min-width: 768px) {

@@ -25,32 +25,48 @@ const ptfeProducts = [
   { title: 'PTFE TUBES', subtitle: '(Extruded and Moulded)', image: '/ptfe-tubes.jfif', specs: [{ label: 'OD/ID Specs', value: 'Full Range Available' }, { label: 'Delivery', value: 'Coils or Straight lengths' }] }
 ];
 
+const rubberProducts = [
+  { title: 'O-RINGS', subtitle: '(Standard & Custom)', image: '/O Rings.jfif', specs: [{ label: 'Standards', value: 'AS568, BS, JIS, Metric' }, { label: 'Materials', value: 'NBR, Viton, EPDM, Silicone' }] },
+  { title: 'OIL SEALS', subtitle: 'Rotary Shaft Seals', image: '/Oil Sealss.jfif', specs: [{ label: 'Types', value: 'Single/Double Lip (TC, SC, etc.)' }, { label: 'Size Range', value: '10mm - 500mm ID' }] },
+  { title: 'RUBBER GASKETS', image: '/Rubber Gaskets.jfif', specs: [{ label: 'Processes', value: 'Die-cut, Lathe-cut, Flash-cut' }, { label: 'Hardness', value: '30 - 90 Shore A' }] },
+  { title: 'EXTRUDED PROFILES', subtitle: 'Custom Cord & Strips', image: '/rubber-showcase.png', specs: [{ label: 'Shapes', value: 'D-section, P-section, Squares' }, { label: 'Customization', value: 'As per drawings' }] },
+  { title: 'RUBBER SHEETS', image: '/rubber sheet.jfif', specs: [{ label: 'Materials', value: 'Neoprene, Nitrile, EPDM' }, { label: 'Thickness', value: '1mm - 50mm' }] },
+  { title: 'ANTI-VIBRATION MOUNTS', image: '/anti vibration.jfif', specs: [{ label: 'Applications', value: 'Pumps, Motors, HVAC' }, { label: 'Types', value: 'Cylindrical, Sandwich' }] }
+];
+
+const rubberGrades = [
+  { id: 'R1', title: 'Nitrile (NBR)', desc: 'Excellent resistance to petroleum-based oils and fuels. Standard for industrial sealing.', tag: 'Oil Resistant', color: '#10b981' },
+  { id: 'R2', title: 'Viton (FKM)', desc: 'Premium fluoroelastomer for high temperature and aggressive chemical environments.', tag: 'High Temp', color: '#ef4444' },
+  { id: 'R3', title: 'EPDM', desc: 'Outstanding resistance to weathering, ozone, and steam. Ideal for outdoor applications.', tag: 'Weathering', color: '#3b82f6' },
+  { id: 'R4', title: 'Silicone', desc: 'Superior thermal stability and flexibility. FDA compliant grades for food & pharma.', tag: 'Food Grade', color: '#f43f5e' },
+  { id: 'R5', title: 'Neoprene', desc: 'Balanced properties with good resistance to oils, chemicals, and outdoor aging.', tag: 'Versatile', color: '#64748b' }
+];
+
 export default function Products() {
   const [activeCategory, setActiveCategory] = useState('ptfe');
   const [activeTab, setActiveTab] = useState('products');
 
   const handleCategoryChange = (cat) => {
     setActiveCategory(cat);
-    if (cat === 'ptfe') {
-      setActiveTab('products');
-    }
+    setActiveTab('products'); // Reset to products tab when switching categories
   };
 
-  const CustomEnquiryCard = () => (
+  const CustomEnquiryCard = ({ type = "Rubber" }) => (
     <div className="glass-card" style={{ 
       background: 'var(--primary)', 
       color: 'white', 
       textAlign: 'center', 
       padding: '4rem 2rem',
       border: 'none',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      position: 'relative'
     }}>
       <div style={{ position: 'absolute', top: 0, right: 0, width: '200px', height: '200px', background: 'var(--accent-glow)', filter: 'blur(80px)', opacity: 0.2 }}></div>
       <div style={{ position: 'relative', zIndex: 2 }}>
         <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🛠️</div>
-        <h3 style={{ color: 'white', fontSize: '1.8rem', marginBottom: '1rem' }}>Bespoke Custom Solutions</h3>
+        <h3 style={{ color: 'white', fontSize: '1.8rem', marginBottom: '1rem' }}>Bespoke {type} Solutions</h3>
         <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto 2.5rem', lineHeight: '1.7', fontFamily: 'Outfit' }}>
-          Don&apos;t see your specific requirement? We specialize in custom PTFE formulations, precision-machined parts, and bespoke industrial components tailored to your engineering drawings.
+          Don&apos;t see your specific requirement? We specialize in custom {type} formulations, precision-molded parts, and bespoke industrial components tailored to your engineering drawings.
         </p>
         <Link href="/contact" className="btn btn-primary" style={{ padding: '1rem 3rem' }}>Request Custom Quote</Link>
       </div>
@@ -65,6 +81,9 @@ export default function Products() {
     marginTop: '0.5rem',
     fontFamily: 'Outfit, sans-serif'
   };
+
+  const currentProducts = activeCategory === 'ptfe' ? ptfeProducts : rubberProducts;
+  const currentGrades = activeCategory === 'ptfe' ? ptfeGrades : rubberGrades;
 
   return (
     <div className="reveal">
@@ -119,7 +138,9 @@ export default function Products() {
         <div className="bg-dots" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></div>
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '3px', fontSize: '0.75rem' }}>Product Catalogue</span>
-          <h1 style={{ color: 'white', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginTop: '1.25rem', marginBottom: '1.5rem' }}>Industrial <span className="gradient-text">Goods Portfolio</span></h1>
+          <h1 style={{ color: 'white', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginTop: '1.25rem', marginBottom: '1.5rem' }}>
+            {activeCategory === 'ptfe' ? 'PTFE' : 'Rubber'} <span className="gradient-text">Division Portfolio</span>
+          </h1>
         </div>
       </section>
 
@@ -172,137 +193,126 @@ export default function Products() {
         {/* Content Area */}
         <main className="content-area">
           <div className="container" style={{ padding: 0 }}>
-            {activeCategory === 'ptfe' ? (
-              <div className="reveal">
-                {/* Horizontal Tabs at Top */}
-                <div className="tabs-header">
-                  <button 
-                    onClick={() => setActiveTab('products')}
-                    className={`tab-btn ${activeTab === 'products' ? 'active' : ''}`}
-                  >
-                    Products List
-                  </button>
-                  <button 
-                    onClick={() => setActiveTab('grades')}
-                    className={`tab-btn ${activeTab === 'grades' ? 'active' : ''}`}
-                  >
-                    Material Grades
-                  </button>
-                </div>
+            <div className="reveal">
+              {/* Horizontal Tabs at Top */}
+              <div className="tabs-header">
+                <button 
+                  onClick={() => setActiveTab('products')}
+                  className={`tab-btn ${activeTab === 'products' ? 'active' : ''}`}
+                >
+                  Products List
+                </button>
+                <button 
+                  onClick={() => setActiveTab('grades')}
+                  className={`tab-btn ${activeTab === 'grades' ? 'active' : ''}`}
+                >
+                  Material Grades
+                </button>
+              </div>
 
-                {activeTab === 'products' ? (
-                  <div className="reveal">
-                    <div style={{ marginBottom: '2.5rem' }}>
-                      <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}>Engineered <span style={{ color: 'var(--accent)' }}>Products</span></h2>
-                      <p style={subheadingStyle}>Precision-machined PTFE components for critical industrial applications.</p>
-                    </div>
-                    <div className="product-list-container">
-                      {ptfeProducts.map((product, i) => (
-                        <div key={i} className="glass-card" style={{ background: 'white', padding: 0, border: '1px solid var(--border)' }}>
-                          <div className="product-card-header">
-                            <div style={{ 
-                              width: '120px', height: '100px', 
-                              background: 'white', 
-                              borderRadius: '8px', 
-                              overflow: 'hidden',
-                              boxShadow: '0 5px 15px rgba(0,0,0,0.05)',
-                              flexShrink: 0
-                            }}>
-                              <img 
-                                src={product.image} 
-                                alt={product.title} 
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                              />
-                            </div>
-                            <div>
-                              <h3 style={{ fontSize: '1.4rem', marginBottom: '0.25rem' }}>{product.title}</h3>
-                              {product.subtitle && <p style={{ fontSize: '0.75rem', fontWeight: '600', color: 'var(--text-muted)', fontFamily: 'Outfit' }}>{product.subtitle}</p>}
-                            </div>
-                          </div>
-                          <div className="product-card-body">
-                            {product.specs.map((spec, j) => (
-                              <div key={j}>
-                                <div style={{ 
-                                  fontSize: '0.65rem', 
-                                  fontWeight: '800', 
-                                  textTransform: 'uppercase', 
-                                  letterSpacing: '1px', 
-                                  color: 'var(--text-muted)',
-                                  marginBottom: '0.5rem',
-                                  fontFamily: 'Outfit'
-                                }}>
-                                  {spec.label}
-                                </div>
-                                <div style={{ 
-                                  fontSize: '1rem', 
-                                  fontWeight: '700', 
-                                  color: 'var(--primary)',
-                                  fontFamily: 'Outfit'
-                                }}>
-                                  {spec.value}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                      {/* Custom Solutions Card */}
-                      <CustomEnquiryCard />
-                    </div>
+              {activeTab === 'products' ? (
+                <div className="reveal">
+                  <div style={{ marginBottom: '2.5rem' }}>
+                    <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}>
+                      {activeCategory === 'ptfe' ? 'Engineered PTFE' : 'Industrial Rubber'} <span style={{ color: 'var(--accent)' }}>Products</span>
+                    </h2>
+                    <p style={subheadingStyle}>
+                      {activeCategory === 'ptfe' 
+                        ? 'Precision-machined PTFE components for critical industrial applications.' 
+                        : 'High-performance elastomeric solutions for sealing and fluid handling.'}
+                    </p>
                   </div>
-                ) : (
-                  <div className="reveal">
-                    <div style={{ marginBottom: '2.5rem' }}>
-                      <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}>Material <span style={{ color: 'var(--accent)' }}>Grades</span></h2>
-                      <p style={subheadingStyle}>Specialized PTFE formulations for specific industrial conditions.</p>
-                    </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
-                      {ptfeGrades.map((grade) => (
-                        <div key={grade.id} className="glass-card grade-card" style={{ borderTop: `6px solid ${grade.color}` }}>
-                          <div style={{ color: grade.color, fontWeight: '800', fontSize: '0.9rem', marginBottom: '0.75rem', fontFamily: 'Outfit' }}>GRADE #{grade.id}</div>
-                          <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem' }}>{grade.title}</h3>
-                          <p style={{ fontSize: '0.9rem', lineHeight: '1.6', color: 'var(--text-main)', opacity: 0.8, fontFamily: 'Outfit' }}>{grade.desc}</p>
+                  <div className="product-list-container">
+                    {currentProducts.map((product, i) => (
+                      <div key={i} className="glass-card" style={{ background: 'white', padding: 0, border: '1px solid var(--border)' }}>
+                        <div className="product-card-header">
                           <div style={{ 
-                            marginTop: '1.5rem',
-                            background: `${grade.color}10`, 
-                            color: grade.color, 
-                            padding: '0.4rem 1rem', 
-                            borderRadius: '100px', 
-                            fontSize: '0.65rem',
-                            fontWeight: '800',
-                            textTransform: 'uppercase',
-                            display: 'inline-block',
-                            border: `1px solid ${grade.color}20`,
-                            fontFamily: 'Outfit'
+                            width: '120px', height: '100px', 
+                            background: 'white', 
+                            borderRadius: '8px', 
+                            overflow: 'hidden',
+                            boxShadow: '0 5px 15px rgba(0,0,0,0.05)',
+                            flexShrink: 0
                           }}>
-                            {grade.tag}
+                            <img 
+                              src={product.image} 
+                              alt={product.title} 
+                              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
+                          </div>
+                          <div>
+                            <h3 style={{ fontSize: '1.4rem', marginBottom: '0.25rem' }}>{product.title}</h3>
+                            {product.subtitle && <p style={{ fontSize: '0.75rem', fontWeight: '600', color: 'var(--text-muted)', fontFamily: 'Outfit' }}>{product.subtitle}</p>}
                           </div>
                         </div>
-                      ))}
-                    </div>
-                    {/* Custom Solutions Card */}
-                    <CustomEnquiryCard />
+                        <div className="product-card-body">
+                          {product.specs.map((spec, j) => (
+                            <div key={j}>
+                              <div style={{ 
+                                fontSize: '0.65rem', 
+                                fontWeight: '800', 
+                                textTransform: 'uppercase', 
+                                letterSpacing: '1px', 
+                                color: 'var(--text-muted)',
+                                marginBottom: '0.5rem',
+                                fontFamily: 'Outfit'
+                              }}>
+                                {spec.label}
+                              </div>
+                              <div style={{ 
+                                fontSize: '1rem', 
+                                fontWeight: '700', 
+                                color: 'var(--primary)',
+                                fontFamily: 'Outfit'
+                              }}>
+                                {spec.value}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                    <CustomEnquiryCard type={activeCategory === 'ptfe' ? 'PTFE' : 'Rubber'} />
                   </div>
-                )}
-              </div>
-            ) : (
-              <div className="reveal" style={{ 
-                textAlign: 'center', 
-                padding: '10rem 2rem', 
-                background: 'white', 
-                borderRadius: 'var(--radius-md)',
-                border: '2px dashed var(--border)'
-              }}>
-                <div style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>🏗️</div>
-                <h3 style={{ fontSize: '2.5rem' }}>Rubber Division</h3>
-                <p style={{ ...subheadingStyle, maxWidth: '500px', margin: '1.5rem auto' }}>
-                  Our state-of-the-art manufacturing for O-Rings, Oil Seals, and bespoke rubber components is coming online in 2026.
-                </p>
-                <div style={{ marginTop: '3rem' }}>
-                  <span className="btn btn-primary" style={{ padding: '1.2rem 3rem' }}>GO LIVE 2026</span>
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className="reveal">
+                  <div style={{ marginBottom: '2.5rem' }}>
+                    <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}>Material <span style={{ color: 'var(--accent)' }}>Grades</span></h2>
+                    <p style={subheadingStyle}>
+                      {activeCategory === 'ptfe' 
+                        ? 'Specialized PTFE formulations for specific industrial conditions.' 
+                        : 'Technical elastomer compounds optimized for various operating environments.'}
+                    </p>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+                    {currentGrades.map((grade) => (
+                      <div key={grade.id} className="glass-card grade-card" style={{ borderTop: `6px solid ${grade.color}` }}>
+                        <div style={{ color: grade.color, fontWeight: '800', fontSize: '0.9rem', marginBottom: '0.75rem', fontFamily: 'Outfit' }}>GRADE #{grade.id}</div>
+                        <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem' }}>{grade.title}</h3>
+                        <p style={{ fontSize: '0.9rem', lineHeight: '1.6', color: 'var(--text-main)', opacity: 0.8, fontFamily: 'Outfit' }}>{grade.desc}</p>
+                        <div style={{ 
+                          marginTop: '1.5rem',
+                          background: `${grade.color}10`, 
+                          color: grade.color, 
+                          padding: '0.4rem 1rem', 
+                          borderRadius: '100px', 
+                          fontSize: '0.65rem',
+                          fontWeight: '800',
+                          textTransform: 'uppercase',
+                          display: 'inline-block',
+                          border: `1px solid ${grade.color}20`,
+                          fontFamily: 'Outfit'
+                        }}>
+                          {grade.tag}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <CustomEnquiryCard type={activeCategory === 'ptfe' ? 'PTFE' : 'Rubber'} />
+                </div>
+              )}
+            </div>
           </div>
         </main>
       </section>

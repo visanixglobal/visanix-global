@@ -15,7 +15,7 @@ export default function CTASection({ title = "Ready to elevate your industrial o
     }}>
       <div style={{ position: 'absolute', inset: 0, background: 'var(--accent-glow)', opacity: 0.1, pointerEvents: 'none' }}></div>
       
-      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+      <div className="container" style={{ position: 'relative', zIndex: 5 }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{ color: 'white', fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '1.5rem', lineHeight: '1.2' }}>
             {title}
