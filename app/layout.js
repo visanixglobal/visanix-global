@@ -7,9 +7,6 @@ export const metadata = {
   title: 'Visanix Global | Premium Industrial Goods & Polymer Solutions',
   description: 'Global provider of high-performance industrial solutions, specialized PTFE engineering materials, and strategic supply chain services.',
   keywords: 'PTFE, Industrial Goods, Polymer Solutions, Engineering Materials, Manufacturing, Global Export',
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     title: 'Visanix Global | Premium Industrial Goods & Polymer Solutions',
     description: 'Global provider of high-performance industrial solutions and specialized PTFE engineering materials.',
