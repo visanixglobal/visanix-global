@@ -65,7 +65,7 @@ export default function Products() {
       <div style={{ position: 'relative', zIndex: 2 }}>
         <div style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>🛠️</div>
         <h3 style={{ color: 'white', fontSize: '1.8rem', marginBottom: '1rem' }}>Bespoke {type} Solutions</h3>
-        <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto 2.5rem', lineHeight: '1.7', fontFamily: 'Outfit' }}>
+        <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto 2.5rem', lineHeight: '1.7', fontFamily: 'var(--font-outfit), sans-serif' }}>
           Don&apos;t see your specific requirement? We specialize in custom {type} formulations, precision-molded parts, and bespoke industrial components tailored to your engineering drawings.
         </p>
         <Link href="/contact" className="btn btn-primary" style={{ padding: '1rem 3rem' }}>Request Custom Quote</Link>
@@ -79,7 +79,7 @@ export default function Products() {
     fontWeight: '600',
     opacity: 0.8,
     marginTop: '0.5rem',
-    fontFamily: 'Outfit, sans-serif'
+    fontFamily: 'var(--font-outfit), sans-serif'
   };
 
   const currentProducts = activeCategory === 'ptfe' ? ptfeProducts : rubberProducts;
@@ -102,7 +102,7 @@ export default function Products() {
           background: transparent; 
           border: none; 
           border-bottom: 3px solid transparent; 
-          font-family: 'Outfit', sans-serif; 
+          font-family: var(--font-outfit), sans-serif; 
           font-weight: 800; 
           text-transform: uppercase; 
           letter-spacing: 2px; 
@@ -242,7 +242,7 @@ export default function Products() {
                           </div>
                           <div>
                             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.25rem' }}>{product.title}</h3>
-                            {product.subtitle && <p style={{ fontSize: '0.75rem', fontWeight: '600', color: 'var(--text-muted)', fontFamily: 'Outfit' }}>{product.subtitle}</p>}
+                            {product.subtitle && <p style={{ fontSize: '0.75rem', fontWeight: '600', color: 'var(--text-muted)', fontFamily: 'var(--font-outfit), sans-serif' }}>{product.subtitle}</p>}
                           </div>
                         </div>
                         <div className="product-card-body">
@@ -255,7 +255,7 @@ export default function Products() {
                                 letterSpacing: '1px', 
                                 color: 'var(--text-muted)',
                                 marginBottom: '0.5rem',
-                                fontFamily: 'Outfit'
+                                fontFamily: 'var(--font-outfit), sans-serif'
                               }}>
                                 {spec.label}
                               </div>
@@ -263,7 +263,7 @@ export default function Products() {
                                 fontSize: '1rem', 
                                 fontWeight: '700', 
                                 color: 'var(--primary)',
-                                fontFamily: 'Outfit'
+                                fontFamily: 'var(--font-outfit), sans-serif'
                               }}>
                                 {spec.value}
                               </div>
@@ -288,9 +288,9 @@ export default function Products() {
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
                     {currentGrades.map((grade) => (
                       <div key={grade.id} className="glass-card grade-card" style={{ borderTop: `6px solid ${grade.color}` }}>
-                        <div style={{ color: grade.color, fontWeight: '800', fontSize: '0.9rem', marginBottom: '0.75rem', fontFamily: 'Outfit' }}>GRADE #{grade.id}</div>
+                        <div style={{ color: grade.color, fontWeight: '800', fontSize: '0.9rem', marginBottom: '0.75rem', fontFamily: 'var(--font-outfit), sans-serif' }}>GRADE #{grade.id}</div>
                         <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem' }}>{grade.title}</h3>
-                        <p style={{ fontSize: '0.9rem', lineHeight: '1.6', color: 'var(--text-main)', opacity: 0.8, fontFamily: 'Outfit' }}>{grade.desc}</p>
+                        <p style={{ fontSize: '0.9rem', lineHeight: '1.6', color: 'var(--text-main)', opacity: 0.8, fontFamily: 'var(--font-outfit), sans-serif' }}>{grade.desc}</p>
                         <div style={{ 
                           marginTop: '1.5rem',
                           background: `${grade.color}10`, 
@@ -302,7 +302,7 @@ export default function Products() {
                           textTransform: 'uppercase',
                           display: 'inline-block',
                           border: `1px solid ${grade.color}20`,
-                          fontFamily: 'Outfit'
+                          fontFamily: 'var(--font-outfit), sans-serif'
                         }}>
                           {grade.tag}
                         </div>

@@ -1,10 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Outfit } from "next/font/google";
 import { useState, useEffect } from 'react';
-
-const outfit = Outfit({ subsets: ["latin"] });
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -49,8 +46,8 @@ export default function Navbar() {
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', textDecoration: 'none', zIndex: 1100 }}>
           <img src="/Logo only.png" alt="Visanix Global Logo" className="navbar-logo" style={{ height: '70px', width: 'auto', filter: 'brightness(1.2)', marginTop: '-4px' }} />
           <div className="brand-text-container" style={{ display: 'flex', flexDirection: 'column', marginTop: '6px' }}>
-            <div className={outfit.className} style={{ fontSize: '1.4rem', color: 'white', letterSpacing: '0.8px', textTransform: 'uppercase', lineHeight: '1' }}>
-              <span style={{ fontWeight: '800' }}>VISANIX</span> <span style={{ color: 'var(--accent)', fontWeight: '600', textTransform: 'none', fontFamily: "'Montserrat', sans-serif" }}>Global</span>
+            <div style={{ fontFamily: 'var(--font-outfit)', fontSize: '1.4rem', color: 'white', letterSpacing: '0.8px', textTransform: 'uppercase', lineHeight: '1' }}>
+              <span style={{ fontWeight: '800' }}>VISANIX</span> <span style={{ color: 'var(--accent)', fontWeight: '600', textTransform: 'none', fontFamily: "var(--font-montserrat), sans-serif" }}>Global</span>
             </div>
             <div style={{
               fontSize: '0.32rem',
@@ -73,34 +70,22 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div style={{ display: 'none', gap: '2rem', alignItems: 'center' }} className="desktop-menu">
-          <style jsx>{`
-            @media (max-width: 480px) {
-              .navbar-logo { height: 45px !important; }
-              .brand-text-container { transform: scale(0.85); transform-origin: left center; }
-            }
-
-            @media (min-width: 1024px) {
-              .desktop-menu { display: flex !important; }
-              .mobile-toggle { display: none !important; }
-            }
-          `}</style>
           {links.map((link) => (
             <Link 
               key={link.href} 
               href={link.href}
+              className={`nav-link ${pathname === link.href ? 'active' : ''}`}
               style={{
-                fontSize: '0.75rem',
-                fontWeight: '700',
-                color: pathname === link.href ? 'var(--accent)' : 'rgba(255,255,255,0.7)',
+                fontSize: '0.8rem',
+                fontWeight: '800',
+                color: pathname === link.href ? 'var(--accent)' : 'rgba(255,255,255,0.85)',
                 textTransform: 'uppercase',
-                letterSpacing: '1.5px',
-                position: 'relative'
+                letterSpacing: '1px',
+                position: 'relative',
+                padding: '5px 0'
               }}
             >
               {link.name}
-              {pathname === link.href && (
-                <span style={{ position: 'absolute', bottom: '-4px', left: 0, width: '100%', height: '2px', backgroundColor: 'var(--accent)', borderRadius: '2px' }}></span>
-              )}
             </Link>
           ))}
           <Link href="/contact" className="btn btn-primary" style={{ padding: '0.6rem 1.4rem', fontSize: '0.7rem', borderRadius: '100px', marginLeft: '0.5rem' }}>
@@ -108,12 +93,53 @@ export default function Navbar() {
           </Link>
         </div>
 
+        <style jsx global>{`
+          .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+          }
+          
+          .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            border-radius: 2px;
+          }
+
+          .nav-link:hover::after {
+            width: 100%;
+          }
+
+          .nav-link.active::after {
+            width: 100%;
+          }
+
+          .nav-link:hover {
+            color: var(--accent) !important;
+          }
+
+          @media (max-width: 480px) {
+            .navbar-logo { height: 45px !important; }
+            .brand-text-container { transform: scale(0.85); transform-origin: left center; }
+          }
+
+          @media (min-width: 1024px) {
+            .desktop-menu { display: flex !important; }
+            .mobile-toggle { display: none !important; }
+          }
+        `}</style>
+
         {/* Mobile Toggle */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="mobile-toggle"
           style={{
-            background: 'transparent',
+            background: 'var(--primary)', 
             border: 'none',
             color: 'white',
             fontSize: '1.5rem',
@@ -132,19 +158,20 @@ export default function Navbar() {
           display: 'flex', 
           flexDirection: 'column', 
           gap: '1.5rem',
-          borderTop: '1px solid rgba(255,255,255,0.05)',
+          borderBottom: '1px solid var(--border)',
           marginTop: '0.5rem'
         }}>
           {links.map((link) => (
             <Link 
               key={link.href} 
               href={link.href}
+              className=""
               style={{
-                fontSize: '1rem',
-                fontWeight: '700',
+                fontSize: '1.1rem',
+                fontWeight: '800',
                 color: pathname === link.href ? 'var(--accent)' : 'white',
                 textTransform: 'uppercase',
-                letterSpacing: '2px'
+                letterSpacing: '1px'
               }}
             >
               {link.name}

@@ -25,7 +25,7 @@ export default function CTASection({ title = "Ready to elevate your industrial o
             fontSize: '1.15rem', 
             marginBottom: '3rem', 
             lineHeight: '1.7',
-            fontFamily: 'Outfit, sans-serif'
+            fontFamily: 'var(--font-outfit), sans-serif'
           }}>
             {subtitle}
           </p>

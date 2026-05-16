@@ -1,6 +1,21 @@
 import './globals.css'
+import { Outfit, Montserrat } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import ContactPopup from '@/components/ContactPopup'
+
+const outfit = Outfit({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-outfit',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+})
 
 export const metadata = {
   metadataBase: new URL('https://www.visanixglobal.com'),
@@ -66,7 +81,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${outfit.variable} ${montserrat.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -76,6 +91,8 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         {children}
+        <WhatsAppButton />
+        <ContactPopup />
         <Footer />
       </body>
     </html>

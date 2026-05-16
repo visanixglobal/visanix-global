@@ -31,7 +31,7 @@ export default function Industries() {
             fontSize: '1.25rem', 
             color: 'rgba(255,255,255,0.9)',
             lineHeight: '1.6',
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'var(--font-outfit), sans-serif',
             fontWeight: '400'
           }}>
             Providing specialized industrial solutions for the most demanding sectors worldwide.
@@ -53,7 +53,7 @@ export default function Industries() {
                   color: 'var(--text-main)', 
                   opacity: 0.8,
                   marginBottom: '2rem',
-                  fontFamily: 'Outfit, sans-serif'
+                  fontFamily: 'var(--font-outfit), sans-serif'
                 }}>
                   {ind.desc}
                 </p>
@@ -84,11 +84,11 @@ export default function Industries() {
             margin: '0 auto 3rem', 
             fontSize: '1.1rem', 
             color: 'rgba(255,255,255,0.7)',
-            fontFamily: 'Outfit, sans-serif'
+            fontFamily: 'var(--font-outfit), sans-serif'
           }}>
             Whether you need custom PTFE components or bulk industrial goods, our technical team is ready to support your requirements.
           </p>
-          <Link href="/contact" className="btn btn-primary" style={{ padding: '1.2rem 3rem' }}>Partner with Visanix <span style={{ fontFamily: "'Montserrat', sans-serif", marginLeft: '4px' }}>Global</span></Link>
+          <Link href="/contact" className="btn btn-primary" style={{ padding: '1.2rem 3rem' }}>Partner with Visanix <span style={{ fontFamily: 'var(--font-montserrat), sans-serif', marginLeft: '4px' }}>Global</span></Link>
         </div>
       </section>
     </div>

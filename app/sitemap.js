@@ -8,6 +8,9 @@ export default function sitemap() {
     '/contact',
     '/industries',
     '/products',
+    '/privacy-policy',
+    '/terms-of-service',
+    '/cookie-policy',
   ];
 
   return routes.map((route) => ({

@@ -64,7 +64,7 @@ const sahilEmail = "sahil@visanixglobal.com";
             fontSize: '1.25rem', 
             color: 'rgba(255,255,255,0.9)',
             lineHeight: '1.6',
-            fontFamily: 'Outfit, sans-serif',
+            fontFamily: 'var(--font-outfit), sans-serif',
             fontWeight: '400'
           }}>
             Discuss your material requirements via our professional form or connect instantly via WhatsApp.

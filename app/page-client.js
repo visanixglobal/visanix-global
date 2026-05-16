@@ -104,11 +104,11 @@ export default function Home() {
               lineHeight: '1.7',
               maxWidth: '820px',
               margin: '0 auto 4rem',
-              fontFamily: 'Outfit, sans-serif',
+              fontFamily: 'var(--font-outfit), sans-serif',
               fontWeight: '500',
               letterSpacing: '0.3px'
             }}>
-              Visanix <span style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: '600' }}>Global</span> is your strategic partner for high-performance industrial goods, <strong style={{ color: 'var(--accent)', fontWeight: '800' }}>specialized PTFE & polymer engineering</strong>, and integrated supply chain solutions across the globe.
+              Visanix <span style={{ fontFamily: 'var(--font-montserrat), sans-serif', fontWeight: '600' }}>Global</span> is your strategic partner for high-performance industrial goods, <strong style={{ color: 'var(--accent)', fontWeight: '800' }}>specialized PTFE & polymer engineering</strong>, and integrated supply chain solutions across the globe.
             </p>
             
             <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 11 }}>
@@ -260,7 +260,7 @@ export default function Home() {
             <div>
               <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '2px' }}>Strategic Solutions</span>
               <h2 style={{ fontSize: '3rem', margin: '1rem 0 2rem' }}>Comprehensive <br /><span style={{ color: 'var(--secondary)' }}>Industrial Goods.</span></h2>
-              <p style={{ fontSize: '1.15rem', color: 'var(--text-main)', opacity: 0.7, lineHeight: '1.8', fontFamily: 'Outfit', marginBottom: '2.5rem' }}>
+              <p style={{ fontSize: '1.15rem', color: 'var(--text-main)', opacity: 0.7, lineHeight: '1.8', fontFamily: 'var(--font-outfit), sans-serif', marginBottom: '2.5rem' }}>
                 We bridge the gap between complex engineering needs and global manufacturing capabilities. Our industrial goods division ensures that your operations have access to high-performance components with full material traceability.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
@@ -309,7 +309,7 @@ export default function Home() {
                   {feat.icon}
                 </div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '1.25rem' }}>{feat.title}</h3>
-                <p style={{ marginBottom: '2.5rem', fontSize: '0.95rem', fontFamily: 'Outfit, sans-serif', lineHeight: '1.7', opacity: 0.7 }}>{feat.desc}</p>
+                <p style={{ marginBottom: '2.5rem', fontSize: '0.95rem', fontFamily: 'var(--font-outfit), sans-serif', lineHeight: '1.7', opacity: 0.7 }}>{feat.desc}</p>
                 <Link href="/about" style={{ 
                   fontWeight: '800', 
                   color: 'var(--primary)', 
@@ -346,18 +346,18 @@ export default function Home() {
                 lineHeight: '1.8',
                 color: 'var(--text-main)',
                 opacity: 0.8,
-                fontFamily: 'Outfit, sans-serif'
+                fontFamily: 'var(--font-outfit), sans-serif'
               }}>
-                Visanix Global combines decades of sourcing mastery with technical precision. While we specialize in high-performance PTFE, our vision encompasses a wide range of industrial engineered goods with a roadmap towards integrated manufacturing in 2026.
+                Visanix Global combines decades of sourcing mastery with technical precision. While we specialize in high-performance PTFE, our vision encompasses a wide range of industrial engineered goods with a focus on global supply chain excellence.
               </p>
               <div style={{ display: 'flex', gap: '4rem', marginBottom: '3.5rem' }}>
                 <div>
                   <h4 style={{ color: 'var(--accent)', fontSize: '2.8rem', marginBottom: '0.5rem' }}>100%</h4>
-                  <p style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', fontFamily: 'Outfit' }}>Traceability</p>
+                  <p style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', fontFamily: 'var(--font-outfit), sans-serif' }}>Traceability</p>
                 </div>
                 <div>
                   <h4 style={{ color: 'var(--accent)', fontSize: '2.8rem', marginBottom: '0.5rem' }}>24/7</h4>
-                  <p style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', fontFamily: 'Outfit' }}>Support</p>
+                  <p style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', fontFamily: 'var(--font-outfit), sans-serif' }}>Support</p>
                 </div>
               </div>
               <Link href="/about" className="btn btn-outline" style={{ padding: '1.2rem 4rem' }}>Our Mission</Link>
@@ -376,10 +376,10 @@ export default function Home() {
                 padding: '3rem',
                 textAlign: 'center'
               }}>
-                <div style={{ fontSize: '5rem', marginBottom: '2rem' }}>🏗️</div>
-                <h3 style={{ color: 'white', fontSize: '2.2rem', marginBottom: '1rem' }}>Manufacturing 2026</h3>
-                <p style={{ color: 'rgba(255,255,255,0.6)', maxWidth: '300px', lineHeight: '1.7', fontFamily: 'Outfit' }}>
-                  Strategic roadmap to vertical manufacturing integration for high-performance elastomers.
+                <div style={{ fontSize: '5rem', marginBottom: '2rem' }}>🌍</div>
+                <h3 style={{ color: 'white', fontSize: '2.2rem', marginBottom: '1rem' }}>Global Reach</h3>
+                <p style={{ color: 'rgba(255,255,255,0.6)', maxWidth: '300px', lineHeight: '1.7', fontFamily: 'var(--font-outfit), sans-serif' }}>
+                  Strategic roadmap to expand our high-performance polymer distribution network worldwide.
                 </p>
               </div>
               <div className="bg-dots" style={{ position: 'absolute', top: '-30px', right: '-30px', width: '120px', height: '120px', opacity: 0.3 }}></div>
