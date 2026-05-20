@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import ContactPopup from '@/components/ContactPopup'
 
-const outfit = Outfit({ 
+const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-outfit',
@@ -42,18 +42,16 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Visanix Global | Industrial Excellence',
     description: 'Specialized PTFE & polymer engineering solutions worldwide.',
-    images: ['/Logo%20only.png?v=4'],
+    images: ['/android-chrome-512x512.png'],
   },
   icons: {
     icon: [
-      { url: '/Logo%20only.png?v=4' },
-      { url: '/Logo%20only.png?v=4', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
-    apple: [
-      { url: '/Logo%20only.png?v=4' },
-    ],
-    shortcut: ['/Logo%20only.png?v=4'],
-  }
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({ children }) {
@@ -62,7 +60,7 @@ export default function RootLayout({ children }) {
     "@type": "Organization",
     "name": "Visanix Global",
     "url": "https://www.visanixglobal.com",
-    "logo": "https://www.visanixglobal.com/Logo%20only.png",
+    "logo": "https://www.visanixglobal.com/logo.png",
     "description": "Global provider of high-performance industrial solutions, specialized PTFE engineering materials, and strategic supply chain services.",
     "address": {
       "@type": "PostalAddress",
