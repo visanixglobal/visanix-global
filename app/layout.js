@@ -31,7 +31,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/Logo%20only.png?v=4',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Visanix Global - Industrial Excellence',
