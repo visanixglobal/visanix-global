@@ -14,7 +14,7 @@ export default function Home() {
     const textTimer = setInterval(() => {
       setTextIndex((prev) => (prev + 1) % rotatingTexts.length);
     }, 3000);
-    
+
     const slideTimer = setInterval(() => {
       setSlideIndex((prev) => (prev + 1) % slideImages.length);
     }, 4000);
@@ -31,7 +31,7 @@ export default function Home() {
     <div className="reveal">
       {/* Premium Hero Section - Full Width Centered */}
       <section style={{
-        minHeight: '100vh',
+        minHeight: '88vh',
         background: 'var(--primary)',
         color: 'white',
         display: 'flex',
@@ -40,7 +40,7 @@ export default function Home() {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        padding: '130px 0',
+        padding: '30px 0 120px',
         textAlign: 'center'
       }}>
         {/* Background Industrial Image */}
@@ -50,20 +50,22 @@ export default function Home() {
           backgroundImage: 'url("/hd-1.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.35, 
-          filter: 'grayscale(60%) brightness(0.3) blur(1px)', 
+          opacity: 0.35,
+          filter: 'grayscale(60%) brightness(0.3) blur(1px)',
           zIndex: 1
         }}></div>
-        
+
         {/* Animated Background Glows */}
         <div style={{
           position: 'absolute',
           top: '20%', left: '10%',
           width: '500px', height: '500px',
+          maxWidth: '100vw',
           background: 'radial-gradient(circle, var(--accent-glow) 0%, transparent 70%)',
           filter: 'blur(100px)',
           opacity: 0.2,
-          zIndex: 2
+          zIndex: 2,
+          pointerEvents: 'none'
         }}></div>
 
         <div className="container" style={{ position: 'relative', zIndex: 10 }}>
@@ -81,10 +83,10 @@ export default function Home() {
               </span>
               <span style={{ height: '1px', width: '30px', background: 'var(--accent)' }}></span>
             </div>
-            
-            <h1 style={{ 
-              color: 'white', 
-              fontSize: 'clamp(2.5rem, 7vw, 5rem)', 
+
+            <h1 style={{
+              color: 'white',
+              fontSize: 'clamp(2.5rem, 7vw, 5rem)',
               marginBottom: '2rem',
               lineHeight: '1.1',
               letterSpacing: '-0.04em'
@@ -96,10 +98,10 @@ export default function Home() {
                 </span>
               </div>
             </h1>
-            
-            <p style={{ 
-              fontSize: '1.35rem', 
-              color: 'rgba(255,255,255,1)', 
+
+            <p style={{
+              fontSize: '1.35rem',
+              color: 'rgba(255,255,255,1)',
               marginBottom: '4rem',
               lineHeight: '1.7',
               maxWidth: '820px',
@@ -108,15 +110,15 @@ export default function Home() {
               fontWeight: '500',
               letterSpacing: '0.3px'
             }}>
-              Visanix <span style={{ fontFamily: 'var(--font-montserrat), sans-serif', fontWeight: '600' }}>Global</span> is your strategic partner for high-performance industrial goods, <strong style={{ color: 'var(--accent)', fontWeight: '800' }}>specialized PTFE & polymer engineering</strong>, and integrated supply chain solutions across the globe.
+              Visanix <span style={{ fontFamily: 'var(--font-montserrat), sans-serif', fontWeight: '600' }}>Global</span> is your trusted <strong style={{ color: 'var(--accent)', fontWeight: '800' }}>PTFE and Teflon supplier across India</strong> — supplying virgin and filled PTFE grades, fluoropolymer engineering materials, and integrated supply chain solutions to chemical plants, pharmaceutical manufacturers, and industrial OEM manufacturers.
             </p>
-            
+
             <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 11 }}>
               <Link href="/products" className="btn btn-primary" style={{ padding: '1.2rem 3.5rem' }}>Our Portfolio</Link>
-              <Link href="/contact" style={{ 
-                color: 'white', 
-                fontWeight: '800', 
-                textTransform: 'uppercase', 
+              <Link href="/contact" style={{
+                color: 'white',
+                fontWeight: '800',
+                textTransform: 'uppercase',
                 fontSize: '0.85rem',
                 letterSpacing: '1.5px',
                 display: 'flex',
@@ -135,12 +137,12 @@ export default function Home() {
 
         {/* Floating Stat badges */}
         <div className="container" style={{ position: 'absolute', bottom: '50px', left: '0', right: '0', zIndex: 4, pointerEvents: 'none' }}>
-          <div className="stats-container" style={{ 
-            display: 'flex', 
+          <div className="stats-container" style={{
+            display: 'flex',
             justifyContent: 'center',
-            gap: '2rem', 
-            opacity: 0.7, 
-            borderTop: '1px solid rgba(255,255,255,0.08)', 
+            gap: '2rem',
+            opacity: 0.7,
+            borderTop: '1px solid rgba(255,255,255,0.08)',
             paddingTop: '40px',
             maxWidth: '1000px',
             margin: '0 auto',
@@ -150,6 +152,9 @@ export default function Home() {
             <style jsx>{`
               @media (min-width: 768px) {
                 .stats-container { gap: 6rem !important; }
+              }
+              @media (max-width: 480px) {
+                .hero-section { padding: 100px 0 80px !important; }
               }
             `}</style>
             {[
@@ -184,32 +189,32 @@ export default function Home() {
                 padding: '20px'
               }}>
                 <div className="bg-grid" style={{ position: 'absolute', inset: '40px', opacity: 0.1, zIndex: 1 }}></div>
-                
-                <div style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  borderRadius: '30px', 
+
+                <div style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '30px',
                   overflow: 'hidden',
                   boxShadow: '0 30px 60px rgba(0,0,0,0.15)',
                   position: 'relative',
                   zIndex: 2,
                   background: 'white'
                 }}>
-                  <img 
+                  <img
                     key={slideIndex}
-                    src={currentImage} 
-                    alt="Industrial Excellence Showcase" 
+                    src={currentImage}
+                    alt="Industrial Excellence Showcase"
                     className="rotate-text-enter"
-                    style={{ 
-                      width: '100%', 
-                      height: '100%', 
+                    style={{
+                      width: '100%',
+                      height: '100%',
                       objectFit: 'contain',
                       padding: currentImage?.includes('hd-1') ? '0' : '2rem',
                       background: '#f8fafc',
                       filter: 'contrast(1.02)'
                     }}
                   />
-                  
+
                   <div style={{
                     position: 'absolute',
                     top: '20px',
@@ -229,10 +234,10 @@ export default function Home() {
 
                   <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '8px' }}>
                     {slideImages.map((_, i) => (
-                      <div key={i} style={{ 
-                        width: i === slideIndex ? '20px' : '6px', 
-                        height: '6px', 
-                        background: 'var(--primary)', 
+                      <div key={i} style={{
+                        width: i === slideIndex ? '20px' : '6px',
+                        height: '6px',
+                        background: 'var(--primary)',
                         borderRadius: '10px',
                         transition: 'all 0.3s ease',
                         opacity: 0.6
@@ -256,12 +261,15 @@ export default function Home() {
                 <div style={{ fontSize: '0.6rem', fontWeight: '700', textTransform: 'uppercase', color: 'var(--primary)', opacity: 0.8 }}>For Industrial Polymers</div>
               </div>
             </div>
-            
+
             <div>
               <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '2px' }}>Strategic Solutions</span>
               <h2 style={{ fontSize: '3rem', margin: '1rem 0 2rem' }}>Comprehensive <br /><span style={{ color: 'var(--secondary)' }}>Industrial Goods.</span></h2>
-              <p style={{ fontSize: '1.15rem', color: 'var(--text-main)', opacity: 0.7, lineHeight: '1.8', fontFamily: 'var(--font-outfit), sans-serif', marginBottom: '2.5rem' }}>
-                We bridge the gap between complex engineering needs and global manufacturing capabilities. Our industrial goods division ensures that your operations have access to high-performance components with full material traceability.
+              <p style={{ fontSize: '1.15rem', color: 'var(--text-main)', opacity: 0.7, lineHeight: '1.8', fontFamily: 'var(--font-outfit), sans-serif', marginBottom: '1.5rem' }}>
+                As a leading <strong>engineering plastics supplier in Gurugram</strong>, we bridge the gap between complex engineering needs and global manufacturing capabilities. Our industrial goods division ensures that your operations have access to high-performance components with full material traceability.
+              </p>
+              <p style={{ fontSize: '1rem', color: 'var(--text-main)', opacity: 0.65, lineHeight: '1.8', fontFamily: 'var(--font-outfit), sans-serif', marginBottom: '2.5rem' }}>
+                We supply <strong>virgin and filled PTFE grades</strong> — including glass filled, carbon filled, and graphite filled — as well as Teflon-branded equivalents, rubber seals, and custom machined fluoropolymer components to B2B customers across India and internationally.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                 <div>
@@ -295,14 +303,14 @@ export default function Home() {
               { title: 'Certified Quality', desc: 'Rigorous ISO-compliant testing and full material traceability for every part we deliver.', icon: '🛡️' }
             ].map((feat, i) => (
               <div key={i} className="glass-card" style={{ padding: '3.5rem 2.5rem', textAlign: 'center', background: 'white' }}>
-                <div style={{ 
-                  width: '80px', height: '80px', 
-                  background: 'var(--bg-light)', 
-                  borderRadius: '20px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  fontSize: '2.5rem', 
+                <div style={{
+                  width: '80px', height: '80px',
+                  background: 'var(--bg-light)',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '2.5rem',
                   margin: '0 auto 2.5rem',
                   border: '1px solid var(--border)'
                 }}>
@@ -310,11 +318,11 @@ export default function Home() {
                 </div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '1.25rem' }}>{feat.title}</h3>
                 <p style={{ marginBottom: '2.5rem', fontSize: '0.95rem', fontFamily: 'var(--font-outfit), sans-serif', lineHeight: '1.7', opacity: 0.7 }}>{feat.desc}</p>
-                <Link href="/about" style={{ 
-                  fontWeight: '800', 
-                  color: 'var(--primary)', 
-                  fontSize: '0.7rem', 
-                  textTransform: 'uppercase', 
+                <Link href="/about" style={{
+                  fontWeight: '800',
+                  color: 'var(--primary)',
+                  fontSize: '0.7rem',
+                  textTransform: 'uppercase',
                   letterSpacing: '1.5px',
                   borderBottom: '2px solid var(--accent)',
                   paddingBottom: '4px'
@@ -332,25 +340,25 @@ export default function Home() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <div>
-              <span style={{ 
-                color: 'var(--accent)', 
-                fontWeight: '800', 
-                textTransform: 'uppercase', 
-                fontSize: '0.75rem', 
-                letterSpacing: '2px' 
+              <span style={{
+                color: 'var(--accent)',
+                fontWeight: '800',
+                textTransform: 'uppercase',
+                fontSize: '0.75rem',
+                letterSpacing: '2px'
               }}>Our Heritage</span>
               <h2 style={{ fontSize: '3.2rem', margin: '1rem 0 2.5rem' }}>Leading with <br /> <span style={{ color: 'var(--accent)' }}>Material Science.</span></h2>
-              <p style={{ 
-                fontSize: '1.2rem', 
-                marginBottom: '3rem', 
+              <p style={{
+                fontSize: '1.2rem',
+                marginBottom: '3rem',
                 lineHeight: '1.8',
                 color: 'var(--text-main)',
                 opacity: 0.8,
                 fontFamily: 'var(--font-outfit), sans-serif'
               }}>
-                Visanix Global combines decades of sourcing mastery with technical precision. While we specialize in high-performance PTFE, our vision encompasses a wide range of industrial engineered goods with a focus on global supply chain excellence.
+                Visanix Global combines deep sourcing expertise with technical precision. As a trusted <strong>fluoropolymer supplier in India</strong>, we specialise in high-performance PTFE — also widely known as Teflon — across a wide range of industrial engineered goods with a focus on global supply chain excellence. From virgin PTFE rods and sheets to filled grades and custom machined components, we serve chemical plants, pharmaceutical manufacturers, and industrial OEM manufacturers across Gurugram, Delhi NCR, and pan-India.
               </p>
-              <div style={{ display: 'flex', gap: '4rem', marginBottom: '3.5rem' }}>
+              <div style={{ display: 'flex', gap: '4rem', marginBottom: '3.5rem', flexWrap: 'wrap' }}>
                 <div>
                   <h4 style={{ color: 'var(--accent)', fontSize: '2.8rem', marginBottom: '0.5rem' }}>100%</h4>
                   <p style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)', fontFamily: 'var(--font-outfit), sans-serif' }}>Traceability</p>
@@ -363,9 +371,9 @@ export default function Home() {
               <Link href="/about" className="btn btn-outline" style={{ padding: '1.2rem 4rem' }}>Our Mission</Link>
             </div>
             <div style={{ position: 'relative' }}>
-              <div style={{ 
-                width: '100%', height: '550px', 
-                background: 'var(--primary)', 
+              <div style={{
+                width: '100%', height: 'auto', minHeight: '300px',
+                background: 'var(--primary)',
                 borderRadius: '30px',
                 boxShadow: '0 40px 80px rgba(0,0,0,0.1)',
                 display: 'flex',

@@ -12,17 +12,17 @@ const ptfeGrades = [
 ];
 
 const ptfeProducts = [
-  { title: 'PTFE ROD', subtitle: '(Extruded and Moulded)', image: '/ptfe-rod-hd.jpg', specs: [{ label: 'Diameter Range', value: '6mm - 200mm' }, { label: 'Standard Lengths', value: '1mtr, 1ft, 905mm' }] },
-  { title: 'PTFE SKIVED SHEET', image: '/ptfe-skived-sheet.webp', specs: [{ label: 'Thickness Range', value: '0.5mm - 6mm' }, { label: 'Available Widths', value: '1mtr, 1.2mtr, 1.5mtr, 2mtr' }] },
-  { title: 'PTFE MOULDED SHEET', image: '/ptfe-sheets-moulded.jpg', specs: [{ label: 'Thickness Range', value: '5mm - 100mm' }, { label: 'Standard Sizes', value: '1x1m, 2x2m, 0.6x0.6m etc.' }] },
-  { title: 'PTFE TUBES', subtitle: '(Extruded and Moulded)', image: '/ptfe-tubes.jfif', specs: [{ label: 'OD/ID Specs', value: 'Full Range Available' }, { label: 'Delivery', value: 'Coils or Straight lengths' }] },
-  { title: 'PTFE BUSH', image: '/ptfe bush.jfif', specs: [{ label: 'OD/ID Ranges', value: 'Custom Manufactured' }, { label: 'Max Length', value: 'Up to 500mm' }] },
-  { title: 'PTFE BALL', image: '/ptfe ball.jfif', specs: [{ label: 'Size Range', value: '3mm - 50mm' }, { label: 'Precision Grade', value: 'Standard Industrial' }] },
-  { title: 'PTFE GLAND', image: '/ptfe gland.jfif', specs: [{ label: 'Standard Sections', value: '3x3mm up to 12x12mm' }, { label: 'Packaging', value: 'Spools of 1kg, 5kg, 10kg' }] },
-  { title: 'PTFE GASKET', image: '/ptfe gasket.jfif', specs: [{ label: 'Custom Cutting', value: 'As per drawings' }, { label: 'Thickness', value: '1mm - 5mm' }] },
-  { title: 'PTFE RING', image: '/ptfe ring.jfif', specs: [{ label: 'Types', value: 'Back-up, O-Rings, V-Rings' }, { label: 'Sizing', value: 'Standard & Custom' }] },
-  { title: 'PTFE TAPE', image: '/ptfe tape.jfif', specs: [{ label: 'Standard Width', value: '12mm, 19mm' }, { label: 'Roll Length', value: '7mtr, 10mtr, 12mtr' }] },
-  { title: 'PTFE CUSTOM', subtitle: 'Tailored Solutions', image: '/ptfe custom.jfif', specs: [{ label: 'Customization Options', value: 'Tailored dimensions, materials, finishes' }, { label: 'Lead Time', value: '2-6 weeks' }] }
+  { title: 'PTFE ROD', subtitle: '(Extruded and Moulded)', slug: 'ptfe-rod', image: '/ptfe-rod-hd.jpg', specs: [{ label: 'Diameter Range', value: '6mm - 200mm' }, { label: 'Standard Lengths', value: '1mtr, 1ft, 905mm' }] },
+  { title: 'PTFE SKIVED SHEET', slug: 'ptfe-sheet-skived', image: '/ptfe-skived-sheet.webp', specs: [{ label: 'Thickness Range', value: '0.5mm - 6mm' }, { label: 'Available Widths', value: '1mtr, 1.2mtr, 1.5mtr, 2mtr' }] },
+  { title: 'PTFE MOULDED SHEET', slug: 'ptfe-sheet-moulded', image: '/ptfe-sheets-moulded.jpg', specs: [{ label: 'Thickness Range', value: '5mm - 100mm' }, { label: 'Standard Sizes', value: '1x1m, 2x2m, 0.6x0.6m etc.' }] },
+  { title: 'PTFE TUBES', subtitle: '(Extruded and Moulded)', slug: 'ptfe-tube', image: '/ptfe-tubes.webp', specs: [{ label: 'OD/ID Specs', value: 'Full Range Available' }, { label: 'Delivery', value: 'Coils or Straight lengths' }] },
+  { title: 'PTFE BUSH', slug: 'ptfe-bush', image: '/ptfe-bush.webp', specs: [{ label: 'OD/ID Ranges', value: 'Custom Manufactured' }, { label: 'Max Length', value: 'Up to 500mm' }] },
+  { title: 'PTFE BALL', slug: 'ptfe-ball', image: '/ptfe-ball.webp', specs: [{ label: 'Size Range', value: '3mm - 50mm' }, { label: 'Precision Grade', value: 'Standard Industrial' }] },
+  { title: 'PTFE GLAND', slug: 'ptfe-gland', image: '/ptfe-gland.webp', specs: [{ label: 'Standard Sections', value: '3x3mm up to 12x12mm' }, { label: 'Packaging', value: 'Spools of 1kg, 5kg, 10kg' }] },
+  { title: 'PTFE GASKET', slug: 'ptfe-gasket', image: '/ptfe-gasket.webp', specs: [{ label: 'Custom Cutting', value: 'As per drawings' }, { label: 'Thickness', value: '1mm - 5mm' }] },
+  { title: 'PTFE RING', slug: 'ptfe-ring', image: '/ptfe-ring.webp', specs: [{ label: 'Types', value: 'Back-up, O-Rings, V-Rings' }, { label: 'Sizing', value: 'Standard & Custom' }] },
+  { title: 'PTFE TAPE', slug: 'ptfe-tape', image: '/ptfe-tape.webp', specs: [{ label: 'Standard Width', value: '12mm, 19mm' }, { label: 'Roll Length', value: '7mtr, 10mtr, 12mtr' }] },
+  { title: 'PTFE CUSTOM', subtitle: 'Tailored Solutions', slug: null, image: '/ptfe-custom.webp', specs: [{ label: 'Customization Options', value: 'Tailored dimensions, materials, finishes' }, { label: 'Lead Time', value: '2-6 weeks' }] }
 ];
 
 const rubberProducts = [
@@ -52,10 +52,10 @@ export default function Products() {
   };
 
   const CustomEnquiryCard = ({ type = "Rubber" }) => (
-    <div className="glass-card" style={{ 
-      background: 'var(--primary)', 
-      color: 'white', 
-      textAlign: 'center', 
+    <div className="glass-card" style={{
+      background: 'var(--primary)',
+      color: 'white',
+      textAlign: 'center',
       padding: '4rem 2rem',
       border: 'none',
       overflow: 'hidden',
@@ -129,7 +129,7 @@ export default function Products() {
 
       {/* Premium Hero */}
       <section style={{
-        padding: '180px 0 80px',
+        padding: 'clamp(100px, 15vw, 180px) 0 80px',
         background: 'linear-gradient(135deg, var(--primary) 0%, #0a1b3d 100%)',
         color: 'white',
         position: 'relative',
@@ -150,7 +150,7 @@ export default function Products() {
           <div className="sidebar-section" style={{ padding: '0 2rem' }}>
             <h4 style={{ fontSize: '0.7rem', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: '1.5rem' }}>Main Divisions</h4>
             <div className="sidebar-btns" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <button 
+              <button
                 onClick={() => handleCategoryChange('ptfe')}
                 style={{
                   padding: '1rem 1.5rem',
@@ -168,7 +168,7 @@ export default function Products() {
               >
                 PTFE Division
               </button>
-              <button 
+              <button
                 onClick={() => handleCategoryChange('rubber')}
                 style={{
                   padding: '1rem 1.5rem',
@@ -196,13 +196,13 @@ export default function Products() {
             <div className="reveal">
               {/* Horizontal Tabs at Top */}
               <div className="tabs-header">
-                <button 
+                <button
                   onClick={() => setActiveTab('products')}
                   className={`tab-btn ${activeTab === 'products' ? 'active' : ''}`}
                 >
                   Products List
                 </button>
-                <button 
+                <button
                   onClick={() => setActiveTab('grades')}
                   className={`tab-btn ${activeTab === 'grades' ? 'active' : ''}`}
                 >
@@ -217,8 +217,8 @@ export default function Products() {
                       {activeCategory === 'ptfe' ? 'Engineered PTFE' : 'Industrial Rubber'} <span style={{ color: 'var(--accent)' }}>Products</span>
                     </h2>
                     <p style={subheadingStyle}>
-                      {activeCategory === 'ptfe' 
-                        ? 'Precision-machined PTFE components for critical industrial applications.' 
+                      {activeCategory === 'ptfe'
+                        ? 'Precision-machined PTFE components for critical industrial applications.'
                         : 'High-performance elastomeric solutions for sealing and fluid handling.'}
                     </p>
                   </div>
@@ -226,42 +226,60 @@ export default function Products() {
                     {currentProducts.map((product, i) => (
                       <div key={i} className="glass-card" style={{ background: 'white', padding: 0, border: '1px solid var(--border)' }}>
                         <div className="product-card-header">
-                          <div style={{ 
-                            width: '120px', height: '100px', 
-                            background: 'white', 
-                            borderRadius: '8px', 
+                          <div style={{
+                            width: '120px', height: '100px',
+                            background: 'white',
+                            borderRadius: '8px',
                             overflow: 'hidden',
                             boxShadow: '0 5px 15px rgba(0,0,0,0.05)',
                             flexShrink: 0
                           }}>
-                            <img 
-                              src={product.image} 
-                              alt={product.title} 
+                            <img
+                              src={product.image}
+                              alt={product.title}
                               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             />
                           </div>
                           <div>
                             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.25rem' }}>{product.title}</h3>
                             {product.subtitle && <p style={{ fontSize: '0.75rem', fontWeight: '600', color: 'var(--text-muted)', fontFamily: 'var(--font-outfit), sans-serif' }}>{product.subtitle}</p>}
+                            {product.slug && (
+                              <Link
+                                href={`/products/${product.slug}`}
+                                style={{
+                                  display: 'inline-block',
+                                  marginTop: '0.6rem',
+                                  fontSize: '0.75rem',
+                                  fontWeight: '700',
+                                  color: 'var(--accent)',
+                                  textDecoration: 'none',
+                                  fontFamily: 'var(--font-outfit), sans-serif',
+                                  letterSpacing: '0.5px',
+                                  textTransform: 'uppercase'
+                                }}
+                              >
+                                View Details →
+                              </Link>
+                            )}
                           </div>
                         </div>
                         <div className="product-card-body">
                           {product.specs.map((spec, j) => (
                             <div key={j}>
-                              <div style={{ 
-                                fontSize: '0.65rem', 
-                                fontWeight: '800', 
-                                textTransform: 'uppercase', 
-                                letterSpacing: '1px', 
+                              <div style={{
+                                fontSize: '0.65rem',
+                                fontWeight: '800',
+                                textTransform: 'uppercase',
+                                letterSpacing: '1px',
                                 color: 'var(--text-muted)',
                                 marginBottom: '0.5rem',
                                 fontFamily: 'var(--font-outfit), sans-serif'
                               }}>
                                 {spec.label}
                               </div>
-                              <div style={{ 
-                                fontSize: '1rem', 
-                                fontWeight: '700', 
+                              <div style={{
+                                fontSize: '1rem',
+                                fontWeight: '700',
                                 color: 'var(--primary)',
                                 fontFamily: 'var(--font-outfit), sans-serif'
                               }}>
@@ -280,23 +298,23 @@ export default function Products() {
                   <div style={{ marginBottom: '2.5rem' }}>
                     <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}>Material <span style={{ color: 'var(--accent)' }}>Grades</span></h2>
                     <p style={subheadingStyle}>
-                      {activeCategory === 'ptfe' 
-                        ? 'Specialized PTFE formulations for specific industrial conditions.' 
+                      {activeCategory === 'ptfe'
+                        ? 'Specialized PTFE formulations for specific industrial conditions.'
                         : 'Technical elastomer compounds optimized for various operating environments.'}
                     </p>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
                     {currentGrades.map((grade) => (
                       <div key={grade.id} className="glass-card grade-card" style={{ borderTop: `6px solid ${grade.color}` }}>
                         <div style={{ color: grade.color, fontWeight: '800', fontSize: '0.9rem', marginBottom: '0.75rem', fontFamily: 'var(--font-outfit), sans-serif' }}>GRADE #{grade.id}</div>
                         <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem' }}>{grade.title}</h3>
                         <p style={{ fontSize: '0.9rem', lineHeight: '1.6', color: 'var(--text-main)', opacity: 0.8, fontFamily: 'var(--font-outfit), sans-serif' }}>{grade.desc}</p>
-                        <div style={{ 
+                        <div style={{
                           marginTop: '1.5rem',
-                          background: `${grade.color}10`, 
-                          color: grade.color, 
-                          padding: '0.4rem 1rem', 
-                          borderRadius: '100px', 
+                          background: `${grade.color}10`,
+                          color: grade.color,
+                          padding: '0.4rem 1rem',
+                          borderRadius: '100px',
                           fontSize: '0.65rem',
                           fontWeight: '800',
                           textTransform: 'uppercase',

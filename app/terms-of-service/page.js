@@ -2,6 +2,7 @@ export const metadata = {
   title: 'Terms of Service | Visanix Global',
   description: 'The terms and conditions governing the use of the Visanix Global industrial portal.',
   alternates: { canonical: '/terms-of-service' },
+  robots: { index: false, follow: false },
 }
 
 export default function TermsOfService() {

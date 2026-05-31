@@ -1,5 +1,5 @@
 import './globals.css'
-import { Outfit, Montserrat } from 'next/font/google'
+import { Outfit, Montserrat, Nunito } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -17,14 +17,25 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 })
 
+const nunito = Nunito({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-nunito',
+  weight: ['400', '600', '700', '800'],
+})
+
+
 export const metadata = {
   metadataBase: new URL('https://www.visanixglobal.com'),
-  title: 'Visanix Global | Premium Industrial Goods & Polymer Solutions',
-  description: 'Global provider of high-performance industrial solutions, specialized PTFE engineering materials, and strategic supply chain services.',
-  keywords: 'PTFE, Industrial Goods, Polymer Solutions, Engineering Materials, Manufacturing, Global Export',
+  title: {
+    default: 'Visanix Global | PTFE Supplier & Industrial Polymer Solutions',
+    template: '%s',
+  },
+  description: 'Visanix Global — PTFE supplier and exporter in Gurugram, India. High-performance PTFE rods, sheets, tubes, gaskets, rubber seals and custom engineered parts.',
+  keywords: 'PTFE supplier India, PTFE rod, PTFE sheet, PTFE tube, PTFE gasket, industrial polymer, engineering materials, Gurugram, export',
   openGraph: {
-    title: 'Visanix Global | Premium Industrial Goods & Polymer Solutions',
-    description: 'Global provider of high-performance industrial solutions and specialized PTFE engineering materials.',
+    title: 'Visanix Global | PTFE Supplier & Industrial Polymer Solutions',
+    description: 'PTFE supplier and exporter in Gurugram, India. High-performance PTFE rods, sheets, tubes, gaskets, rubber seals and custom engineered parts.',
     url: 'https://www.visanixglobal.com',
     siteName: 'Visanix Global',
     locale: 'en_US',
@@ -34,15 +45,15 @@ export const metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Visanix Global - Industrial Excellence',
+        alt: 'Visanix Global - PTFE Supplier India',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Visanix Global | Industrial Excellence',
-    description: 'Specialized PTFE & polymer engineering solutions worldwide.',
-    images: ['/android-chrome-512x512.png'],
+    title: 'Visanix Global | PTFE Supplier India',
+    description: 'PTFE supplier and exporter in Gurugram, India. Rods, sheets, tubes, gaskets and custom parts.',
+    images: ['/og-image.png'],
   },
   icons: {
     icon: [
@@ -57,11 +68,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness"],
     "name": "Visanix Global",
     "url": "https://www.visanixglobal.com",
     "logo": "https://www.visanixglobal.com/logo.png",
-    "description": "Global provider of high-performance industrial solutions, specialized PTFE engineering materials, and strategic supply chain services.",
+    "image": "https://www.visanixglobal.com/og-image.png",
+    "description": "Visanix Global is a trusted PTFE supplier and exporter based in Gurugram, India. We supply PTFE rods, sheets, tubes, gaskets, rubber seals and custom engineered parts globally.",
+    "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "LGF-72/ Sector 30",
@@ -70,16 +83,44 @@ export default function RootLayout({ children }) {
       "postalCode": "122022",
       "addressCountry": "IN"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "28.4595",
+      "longitude": "77.0266"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91 9667445766",
+      "telephone": "+91-9667445766",
       "contactType": "customer service",
-      "email": "sahil@visanixglobal.com"
-    }
+      "email": "sahil@visanixglobal.com",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "PTFE & Rubber Products",
+      "url": "https://www.visanixglobal.com/products"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "foundingDate": "2024",
+    "sameAs": [
+      "https://www.indiamart.com/visanix-global/",
+      "https://www.linkedin.com/company/visanix-global",
+      "https://www.facebook.com/visanixglobal",
+      "https://www.justdial.com/visanix-global"
+    ]
   };
 
   return (
-    <html lang="en" className={`${outfit.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${montserrat.variable} ${nunito.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -88,7 +129,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Navbar />
-        {children}
+        <div style={{ paddingTop: '114px' }}>
+          {children}
+        </div>
         <WhatsAppButton />
         <ContactPopup />
         <Footer />

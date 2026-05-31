@@ -2,6 +2,7 @@ export const metadata = {
   title: 'Cookie Policy | Visanix Global',
   description: 'Information about how we use cookies to improve your experience on our platform.',
   alternates: { canonical: '/cookie-policy' },
+  robots: { index: false, follow: false },
 }
 
 export default function CookiePolicy() {

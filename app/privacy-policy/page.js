@@ -2,6 +2,7 @@ export const metadata = {
   title: 'Privacy Policy | Visanix Global',
   description: 'Our commitment to protecting your personal data and ensuring transparency in our industrial operations.',
   alternates: { canonical: '/privacy-policy' },
+  robots: { index: false, follow: false },
 }
 
 export default function PrivacyPolicy() {

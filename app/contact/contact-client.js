@@ -10,13 +10,13 @@ export default function Contact() {
   const whatsappNumber = "919667445766";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Visanix Global, I have an enquiry regarding industrial polymer solutions.`;
   const emailAddress = "visanixglobal@gmail.com";
-const sahilEmail = "sahil@visanixglobal.com";
+  const sahilEmail = "sahil@visanixglobal.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-    
+
     const formData = new FormData(e.target);
     formData.append("access_key", "c2baa74a-20fd-4f89-99d6-06616744b632");
 
@@ -36,7 +36,7 @@ const sahilEmail = "sahil@visanixglobal.com";
       }
     } catch (err) {
       setLoading(false);
-      setError(true); 
+      setError(true);
       console.error("Submission error:", err);
     }
   };
@@ -45,7 +45,7 @@ const sahilEmail = "sahil@visanixglobal.com";
     <div className="reveal">
       {/* Premium Hero */}
       <section style={{
-        padding: '160px 0 80px',
+        padding: 'clamp(100px, 15vw, 160px) 0 80px',
         background: 'linear-gradient(135deg, var(--primary) 0%, #0a1b3d 100%)',
         color: 'white',
         textAlign: 'center',
@@ -56,12 +56,12 @@ const sahilEmail = "sahil@visanixglobal.com";
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '3px', fontSize: '0.75rem' }}>Global Support</span>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginTop: '1.25rem', marginBottom: '1.5rem' }}>Connect with <span className="gradient-text">Experts</span></h1>
-          
+
           {/* Improved Contact Hero Typography */}
-          <p style={{ 
-            maxWidth: '700px', 
-            margin: '0 auto', 
-            fontSize: '1.25rem', 
+          <p style={{
+            maxWidth: '700px',
+            margin: '0 auto',
+            fontSize: '1.25rem',
             color: 'rgba(255,255,255,0.9)',
             lineHeight: '1.6',
             fontFamily: 'var(--font-outfit), sans-serif',
@@ -69,7 +69,7 @@ const sahilEmail = "sahil@visanixglobal.com";
           }}>
             Discuss your material requirements via our professional form or connect instantly via WhatsApp.
           </p>
-          
+
           <div style={{ marginTop: '2.5rem' }}>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ background: '#25D366', border: 'none', color: 'white' }}>
               <span style={{ marginRight: '0.75rem', fontSize: '1.2rem' }}>💬</span> Chat on WhatsApp
@@ -80,7 +80,7 @@ const sahilEmail = "sahil@visanixglobal.com";
 
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'flex-start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(2rem, 5vw, 5rem)', alignItems: 'flex-start' }}>
             {/* Form Area */}
             <div className="glass-card" style={{ padding: '3rem', background: 'var(--bg-light)', border: 'none' }}>
               {isSubmitted ? (
@@ -114,7 +114,7 @@ const sahilEmail = "sahil@visanixglobal.com";
                     <h3 style={{ fontSize: '1.6rem' }}>Direct Enquiry</h3>
                     <span style={{ fontSize: '0.7rem', color: 'var(--accent)', fontWeight: '800' }}>24H RESPONSE</span>
                   </div>
-                  
+
                   <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.25rem' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
@@ -139,7 +139,7 @@ const sahilEmail = "sahil@visanixglobal.com";
                       <label style={{ fontSize: '0.65rem', fontWeight: '800', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Detailed Message</label>
                       <textarea name="message" required rows="5" placeholder="Describe your technical requirements..." style={{ padding: '0.85rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border)', outline: 'none', resize: 'none', fontSize: '0.9rem' }}></textarea>
                     </div>
-                    
+
                     <button type="submit" disabled={loading} className="btn btn-primary" style={{ padding: '1rem', fontSize: '0.75rem', opacity: loading ? 0.7 : 1 }}>
                       {loading ? 'Sending...' : 'Send Message'}
                     </button>
@@ -152,7 +152,7 @@ const sahilEmail = "sahil@visanixglobal.com";
             <div>
               <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.75rem' }}>Management Team</span>
               <h2 style={{ fontSize: '2.5rem', marginBottom: '2.5rem', marginTop: '1rem' }}>Leadership <span style={{ color: 'var(--secondary)' }}>Access</span></h2>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div className="glass-card" style={{ padding: '2rem', textAlign: 'left', border: '1px solid var(--border)', background: 'white' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -169,7 +169,7 @@ const sahilEmail = "sahil@visanixglobal.com";
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="glass-card" style={{ padding: '2rem', textAlign: 'left', border: '1px solid var(--border)', background: 'var(--bg-light)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <h4 style={{ fontSize: '1.3rem', marginBottom: '0.25rem' }}>General Enquiries</h4>
@@ -191,30 +191,6 @@ const sahilEmail = "sahil@visanixglobal.com";
         </div>
       </section>
 
-      {/* Floating WhatsApp Button */}
-      <a 
-        href={whatsappLink} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        style={{
-          position: 'fixed',
-          bottom: '30px',
-          right: '30px',
-          width: '60px',
-          height: '60px',
-          background: '#25D366',
-          borderRadius: '50%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '2rem',
-          color: 'white',
-          boxShadow: '0 10px 25px rgba(37, 211, 102, 0.4)',
-          zIndex: 1000
-        }}
-      >
-        💬
-      </a>
     </div>
   );
 }

@@ -49,6 +49,7 @@ export default function About() {
         .timeline-item:nth-child(odd) .timeline-card { margin-left: auto; }
         .timeline-item:nth-child(odd) .timeline-card::after { left: -20px; }
         .timeline-item:nth-child(even) .timeline-card::after { right: -20px; }
+        .timeline-dot { position: absolute; left: 50%; top: 30px; transform: translateX(-50%); width: 12px; height: 12px; background: var(--accent); border-radius: 50%; z-index: 5; box-shadow: 0 0 0 6px white, 0 0 20px var(--accent-glow); }
         
         .value-card { padding: 3rem; background: white; border-radius: 24px; border: 1px solid var(--border); transition: all 0.5s ease; }
         .value-card:hover { background: var(--primary); transform: translateY(-15px); }
@@ -57,6 +58,7 @@ export default function About() {
 
         @media (max-width: 768px) {
           .timeline-line { left: 20px; }
+          .timeline-dot { left: 20px !important; transform: translateX(-50%) !important; }
           .timeline-card { width: calc(100% - 60px); margin-left: 60px !important; }
           .timeline-card::after { left: -20px !important; right: auto !important; }
         }
@@ -64,29 +66,28 @@ export default function About() {
 
       {/* Hero Section */}
       <section style={{
-        padding: '220px 0 120px',
+        padding: 'clamp(120px, 20vw, 220px) 0 clamp(60px, 10vw, 120px)',
         background: 'linear-gradient(rgba(5, 15, 41, 0.9), rgba(5, 15, 41, 0.9)), url("/hd-1.jpg")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
         color: 'white',
         textAlign: 'center',
         position: 'relative'
       }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%)', opacity: 0.15 }}></div>
         <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-          <span style={{ 
-            color: 'var(--accent)', 
-            fontWeight: '800', 
-            textTransform: 'uppercase', 
-            letterSpacing: '5px', 
+          <span style={{
+            color: 'var(--accent)',
+            fontWeight: '800',
+            textTransform: 'uppercase',
+            letterSpacing: '5px',
             fontSize: '0.8rem',
             display: 'block',
             marginBottom: '1.5rem'
           }}>Establishing Industrial Excellence</span>
-          <h1 style={{ 
-            color: 'white', 
-            fontSize: 'clamp(3rem, 7vw, 5.5rem)', 
+          <h1 style={{
+            color: 'white',
+            fontSize: 'clamp(3rem, 7vw, 5.5rem)',
             lineHeight: '1',
             letterSpacing: '-2px',
             marginBottom: '2rem'
@@ -98,30 +99,30 @@ export default function About() {
       {/* Corporate Narrative */}
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div style={{ position: 'relative' }}>
               <div style={{ position: 'absolute', top: '-20px', left: '-20px', width: '100px', height: '100px', borderTop: '4px solid var(--accent)', borderLeft: '4px solid var(--accent)', opacity: 0.3 }}></div>
-              <img src="/ptfe-rod-hd.jpg" alt="Industrial Excellence" style={{ width: '100%', borderRadius: '24px', boxShadow: '0 40px 80px rgba(0,0,0,0.15)' }} />
+              <img src="/ptfe-rod-hd.jpg" alt="PTFE Rod – Visanix Global PTFE Supplier Gurugram India" style={{ width: '100%', borderRadius: '24px', boxShadow: '0 40px 80px rgba(0,0,0,0.15)' }} />
             </div>
-            
+
             <div>
               <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.85rem' }}>Strategic Brand Narrative</span>
               <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', margin: '1.5rem 0 2.5rem', lineHeight: '1.2' }}>A Global Pillar of <span style={{ color: 'var(--accent)' }}>Industrial Reliability.</span></h2>
               <div style={{ position: 'relative', paddingLeft: '2rem', borderLeft: '1px solid var(--border)' }}>
-                <p style={{ 
-                  fontSize: '1.25rem', 
-                  lineHeight: '1.8', 
-                  color: 'var(--text-main)', 
+                <p style={{
+                  fontSize: '1.25rem',
+                  lineHeight: '1.8',
+                  color: 'var(--text-main)',
                   fontFamily: 'var(--font-outfit), sans-serif',
                   marginBottom: '2rem',
                   fontStyle: 'italic'
                 }}>
                   &quot;Visanix <span style={{ fontFamily: 'var(--font-montserrat), sans-serif', fontWeight: '600' }}>Global</span> is a trusted supplier and exporter of high-quality PTFE products and engineering materials. We specialize in providing reliable solutions for various industrial applications while maintaining strict quality standards.&quot;
                 </p>
-                <p style={{ 
-                  fontSize: '1.1rem', 
-                  lineHeight: '1.7', 
-                  color: 'var(--text-muted)', 
+                <p style={{
+                  fontSize: '1.1rem',
+                  lineHeight: '1.7',
+                  color: 'var(--text-muted)',
                   fontFamily: 'var(--font-outfit), sans-serif'
                 }}>
                   Our focus is on delivering the right products, timely service, and strong customer support. At Visanix Global, we aim to build long-term partnerships through trust, quality, and consistent supply.
@@ -139,18 +140,18 @@ export default function About() {
             <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.85rem' }}>Our Operational Values</span>
             <h2 style={{ fontSize: '2.5rem', marginTop: '1rem' }}>Built on a Foundation of <span style={{ color: 'var(--accent)' }}>Excellence.</span></h2>
           </div>
-          
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
             {pillars.map((pillar, i) => (
               <div key={i} className="value-card">
-                <div className="icon-box" style={{ 
-                  width: '70px', 
-                  height: '70px', 
-                  background: 'var(--bg-light)', 
-                  borderRadius: '20px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
+                <div className="icon-box" style={{
+                  width: '70px',
+                  height: '70px',
+                  background: 'var(--bg-light)',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   color: 'var(--primary)',
                   marginBottom: '2rem',
                   transition: 'all 0.4s ease'
@@ -179,18 +180,7 @@ export default function About() {
             <div className="timeline-line"></div>
             {milestones.map((item, i) => (
               <div key={i} className="timeline-item" style={{ marginBottom: '4rem', display: 'flex', position: 'relative' }}>
-                <div style={{ 
-                  position: 'absolute', 
-                  left: '50%', 
-                  top: '30px', 
-                  transform: 'translateX(-50%)', 
-                  width: '12px', 
-                  height: '12px', 
-                  background: 'var(--accent)', 
-                  borderRadius: '50%', 
-                  zIndex: 5,
-                  boxShadow: '0 0 0 6px white, 0 0 20px var(--accent-glow)'
-                }}></div>
+                <div className="timeline-dot"></div>
                 <div className="timeline-card">
                   <div style={{ color: 'var(--accent)', fontWeight: '800', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '0.5rem', letterSpacing: '1px' }}>{item.year}</div>
                   <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>{item.title}</h3>
@@ -202,9 +192,9 @@ export default function About() {
         </div>
       </section>
 
-      <CTASection 
-        title={<>Ready to Build a <span style={{ color: 'var(--accent)' }}>Long-Term Partnership?</span></>} 
-        subtitle="Consult with our material experts today for custom solutions tailored to your technical requirements." 
+      <CTASection
+        title={<>Ready to Build a <span style={{ color: 'var(--accent)' }}>Long-Term Partnership?</span></>}
+        subtitle="Consult with our material experts today for custom solutions tailored to your technical requirements."
       />
     </div>
   );
