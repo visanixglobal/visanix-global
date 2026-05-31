@@ -129,7 +129,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Navbar />
-        <div style={{ paddingTop: '114px' }}>
+        <div className="page-content-wrapper">
           {children}
         </div>
         <WhatsAppButton />

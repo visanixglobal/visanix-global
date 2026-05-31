@@ -41,9 +41,9 @@ export default function About() {
   return (
     <div className="reveal">
       <style jsx>{`
-        .timeline-container { position: relative; max-width: 1000px; margin: 4rem auto; padding: 0 1rem; }
+        .timeline-container { position: relative; max-width: 1000px; margin: 4rem auto; padding: 0 1rem; overflow: hidden; }
         .timeline-line { position: absolute; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: var(--border); opacity: 0.5; }
-        .timeline-card { background: white; padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--border); position: relative; width: calc(50% - 50px); transition: var(--transition); }
+        .timeline-card { background: white; padding: 2.5rem; border-radius: var(--radius-md); border: 1px solid var(--border); position: relative; width: calc(50% - 50px); transition: var(--transition); min-width: 0; }
         .timeline-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); border-color: var(--accent); }
         .timeline-card::after { content: ''; position: absolute; top: 30px; width: 20px; height: 2px; background: var(--accent); }
         .timeline-item:nth-child(odd) .timeline-card { margin-left: auto; }
@@ -61,6 +61,11 @@ export default function About() {
           .timeline-dot { left: 20px !important; transform: translateX(-50%) !important; }
           .timeline-card { width: calc(100% - 60px); margin-left: 60px !important; }
           .timeline-card::after { left: -20px !important; right: auto !important; }
+        }
+
+        @media (max-width: 480px) {
+          .value-card { padding: 2rem; }
+          .timeline-card { padding: 1.5rem; }
         }
       `}</style>
 

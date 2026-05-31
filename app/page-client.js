@@ -28,7 +28,7 @@ export default function Home() {
   const currentImage = slideImages[slideIndex] || slideImages[0];
 
   return (
-    <div className="reveal">
+    <div>
       {/* Premium Hero Section - Full Width Centered */}
       <section style={{
         minHeight: '88vh',
@@ -59,8 +59,7 @@ export default function Home() {
         <div style={{
           position: 'absolute',
           top: '20%', left: '10%',
-          width: '500px', height: '500px',
-          maxWidth: '100vw',
+          width: 'min(500px, 80vw)', height: 'min(500px, 80vw)',
           background: 'radial-gradient(circle, var(--accent-glow) 0%, transparent 70%)',
           filter: 'blur(100px)',
           opacity: 0.2,
@@ -155,6 +154,7 @@ export default function Home() {
               }
               @media (max-width: 480px) {
                 .hero-section { padding: 100px 0 80px !important; }
+                .stats-container { display: none !important; }
               }
             `}</style>
             {[
@@ -175,7 +175,7 @@ export default function Home() {
       <section className="section-padding" style={{ background: 'white', position: 'relative' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
-            <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '30px' }}>
               <div style={{
                 width: '100%',
                 maxWidth: '480px',
@@ -370,7 +370,7 @@ export default function Home() {
               </div>
               <Link href="/about" className="btn btn-outline" style={{ padding: '1.2rem 4rem' }}>Our Mission</Link>
             </div>
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '30px' }}>
               <div style={{
                 width: '100%', height: 'auto', minHeight: '300px',
                 background: 'var(--primary)',
@@ -390,7 +390,7 @@ export default function Home() {
                   Strategic roadmap to expand our high-performance polymer distribution network worldwide.
                 </p>
               </div>
-              <div className="bg-dots" style={{ position: 'absolute', top: '-30px', right: '-30px', width: '120px', height: '120px', opacity: 0.3 }}></div>
+              <div className="bg-dots" style={{ position: 'absolute', top: '-30px', right: '-30px', width: '120px', height: '120px', opacity: 0.3, overflow: 'hidden' }}></div>
             </div>
           </div>
         </div>

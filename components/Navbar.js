@@ -21,17 +21,19 @@ export default function Navbar() {
 
         {/* Logo — absolutely centered vertically across full header */}
         <Link href="/" className="logo-link">
-          <img src="/Logo only.png" alt="Visanix Global Logo" className="navbar-logo" />
+          <img src="/Logo only.png" alt="Visanix Global Logo" className="navbar-logo" fetchPriority="high" />
           <div className="brand-text-container">
-            <div className="brand-name">
-              <span className="brand-visanix">VISANIX</span>
-              {' '}
-              <span className="brand-global">Global</span>
-            </div>
-            <div className="brand-tagline">
-              {"DELIVERING INDUSTRIAL EXCELLENCE WORLDWIDE".split("").map((char, i) => (
-                <span key={i}>{char === " " ? "\u00A0" : char}</span>
-              ))}
+            <div className="brand-name-wrap">
+              <div className="brand-name">
+                <span className="brand-visanix">VISANIX</span>
+                {' '}
+                <span className="brand-global">Global</span>
+              </div>
+              <div className="brand-tagline">
+                {"DELIVERING INDUSTRIAL EXCELLENCE WORLDWIDE".split("").map((char, i) => (
+                  <span key={i}>{char === " " ? "\u00A0" : char}</span>
+                ))}
+              </div>
             </div>
           </div>
         </Link>
@@ -131,7 +133,8 @@ export default function Navbar() {
           align-items: center;
           gap: 0.3rem;
           text-decoration: none;
-          flex-shrink: 0;
+          flex-shrink: 1;
+          min-width: 0;
           height: 100%;
         }
         .navbar-logo {
@@ -144,6 +147,14 @@ export default function Navbar() {
           flex-direction: column;
           justify-content: center;
           margin-top: 6px;
+          min-width: 0;
+          max-width: 100%;
+        }
+        /* Wrapper sizes to brand name — tagline clips to same width */
+        .brand-name-wrap {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: flex-start;
         }
         .brand-name {
           font-family: var(--font-outfit);
@@ -152,6 +163,7 @@ export default function Navbar() {
           letter-spacing: 0.8px;
           text-transform: uppercase;
           line-height: 1;
+          white-space: nowrap;
         }
         .brand-visanix { font-weight: 800; }
         .brand-global {
@@ -164,16 +176,17 @@ export default function Navbar() {
           vertical-align: 1px;
         }
         .brand-tagline {
-          font-size: 0.42rem;
           color: var(--accent);
           text-transform: uppercase;
+          margin-top: 4px;
+          font-weight: 800;
+          opacity: 0.9;
+          /* Stretch tagline to fill exactly the brand name width */
+          width: 100%;
+          font-size: clamp(0.22rem, 0.9vw, 0.42rem);
           display: flex;
           justify-content: space-between;
-          width: 100%;
-          margin-top: 5px;
-          font-weight: 800;
-          letter-spacing: 0.6px;
-          opacity: 0.9;
+          letter-spacing: 0;
         }
 
         /* ── Right column ── */
@@ -271,6 +284,8 @@ export default function Navbar() {
           flex-direction: column;
           gap: 1.25rem;
           border-top: 1px solid rgba(255,255,255,0.07);
+          max-height: calc(100vh - 70px);
+          overflow-y: auto;
         }
         .mobile-nav-link {
           font-size: 1rem;
@@ -301,10 +316,17 @@ export default function Navbar() {
           .right-col { display: flex !important; }
           .mobile-toggle { display: none !important; }
         }
+        @media (max-width: 768px) {
+          .header-inner { height: 80px; }
+          .navbar-logo { height: 60px !important; }
+          .brand-name { font-size: 1.3rem; }
+          .brand-global { font-size: 1.2rem; }
+        }
         @media (max-width: 480px) {
           .navbar-logo { height: 42px !important; }
-          .brand-text-container { transform: scale(0.85); transform-origin: left center; }
           .header-inner { height: 70px; }
+          .brand-name { font-size: 1.05rem; }
+          .brand-global { font-size: 0.95rem; }
         }
       `}</style>
     </header>

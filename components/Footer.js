@@ -82,10 +82,8 @@ export default function Footer() {
                     <span style={{ fontWeight: '800' }}>VISANIX</span>{' '}
                     <span style={{ color: 'var(--accent)', fontWeight: '500', textTransform: 'none', fontFamily: "'Garet', sans-serif", letterSpacing: '0', fontSize: '1.2rem', verticalAlign: '1px' }}>Global</span>
                   </div>
-                  <div style={{ fontSize: '0.22rem', color: 'var(--accent)', textTransform: 'uppercase', marginTop: '5px', fontWeight: '800', letterSpacing: '0.6px', opacity: 0.9, display: 'flex', justifyContent: 'space-between', width: '100%', whiteSpace: 'nowrap' }}>
-                    {"DELIVERING INDUSTRIAL EXCELLENCE WORLDWIDE".split("").map((char, index) => (
-                      <span key={index}>{char === " " ? "\u00A0" : char}</span>
-                    ))}
+                  <div style={{ fontSize: '0.22rem', color: 'var(--accent)', textTransform: 'uppercase', marginTop: '5px', fontWeight: '800', letterSpacing: '0.38em', opacity: 0.9, whiteSpace: 'nowrap', overflow: 'hidden', maxWidth: '100%' }}>
+                    DELIVERING INDUSTRIAL EXCELLENCE WORLDWIDE
                   </div>
                 </div>
               </Link>

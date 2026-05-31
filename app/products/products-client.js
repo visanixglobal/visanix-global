@@ -89,8 +89,8 @@ export default function Products() {
     <div className="reveal">
       <style jsx>{`
         .layout-container { display: flex; flex-direction: row; min-height: 80vh; background: var(--bg-light); }
-        .sidebar { width: 300px; background: white; border-right: 1px solid var(--border); padding: 4rem 0; display: flex; flex-direction: column; }
-        .content-area { flex: 1; padding: 4rem; }
+        .sidebar { width: 300px; min-width: 0; background: white; border-right: 1px solid var(--border); padding: 4rem 0; display: flex; flex-direction: column; }
+        .content-area { flex: 1; min-width: 0; padding: 4rem; overflow: hidden; }
         .product-list-container { display: flex; flex-direction: column; gap: 2.5rem; }
         .product-card-header { padding: 2.5rem; display: flex; alignItems: center; gap: 2rem; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.01); }
         .product-card-body { padding: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; }
@@ -115,15 +115,23 @@ export default function Products() {
 
         @media (max-width: 1024px) {
           .layout-container { flex-direction: column; }
-          .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 0; }
+          .sidebar { width: 100% !important; border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 0; }
           .content-area { padding: 2rem 1rem; }
           .sidebar-section { padding: 0 1.5rem !important; }
           .sidebar-btns { flex-direction: row !important; overflow-x: auto; padding-bottom: 1rem; gap: 0.75rem !important; }
-          .product-card-header { padding: 1.5rem; gap: 1rem; }
+          .product-card-header { padding: 1.5rem; gap: 1rem; flex-wrap: wrap; }
           .product-card-body { padding: 1.5rem; gap: 1.5rem; }
           .product-list-container { gap: 1.5rem; }
           .grade-card { padding: 1.5rem; }
           .tabs-header { gap: 1.5rem; margin-bottom: 2rem; }
+        }
+
+        @media (max-width: 480px) {
+          .content-area { padding: 1.5rem 0.75rem; }
+          .product-card-header { padding: 1rem; gap: 0.75rem; }
+          .product-card-body { padding: 1rem; gap: 1rem; grid-template-columns: 1fr 1fr; }
+          .tabs-header { gap: 1rem; }
+          .tab-btn { font-size: 0.75rem; letter-spacing: 1px; }
         }
       `}</style>
 
