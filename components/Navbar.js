@@ -21,7 +21,7 @@ export default function Navbar() {
 
         {/* Logo — absolutely centered vertically across full header */}
         <Link href="/" className="logo-link">
-          <img src="/Logo only.png" alt="Visanix Global Logo" className="navbar-logo" fetchPriority="high" />
+          <img src="/Logo only.png" alt="Visanix Global Logo" className="navbar-logo" fetchPriority="high" width="90" height="90" />
           <div className="brand-text-container">
             <div className="brand-name-wrap">
               <div className="brand-name">

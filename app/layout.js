@@ -7,21 +7,27 @@ import ContactPopup from '@/components/ContactPopup'
 
 const outfit = Outfit({
   subsets: ['latin'],
-  display: 'swap',
+  display: 'block',
   variable: '--font-outfit',
+  fallback: ['system-ui', 'sans-serif'],
+  preload: true,
 })
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  display: 'swap',
+  display: 'block',
   variable: '--font-montserrat',
+  fallback: ['system-ui', 'sans-serif'],
+  preload: true,
 })
 
 const nunito = Nunito({
   subsets: ['latin'],
-  display: 'swap',
+  display: 'block',
   variable: '--font-nunito',
   weight: ['400', '600', '700', '800'],
+  fallback: ['system-ui', 'sans-serif'],
+  preload: false,
 })
 
 
@@ -122,12 +128,121 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${outfit.variable} ${montserrat.variable} ${nunito.variable}`}>
       <head>
+        <style dangerouslySetInnerHTML={{
+          __html: `
+          .navbar-logo { height: 90px !important; width: auto !important; max-height: 90px !important; }
+          .site-header { background: #0A1128; }
+          body { background: #ffffff; }
+          #page-loader {
+            position: fixed;
+            inset: 0;
+            background: #0A1128;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+            transition: opacity 0.4s ease;
+          }
+          #page-loader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+          }
+          #page-loader .loader-inner {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
+          #page-loader img {
+            height: 72px;
+            width: auto;
+            filter: brightness(1.2) drop-shadow(0 0 0 #0A1128);
+            background: #0A1128;
+          }
+          #page-loader .loader-brand {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 6px;
+          }
+          #page-loader .loader-name {
+            font-family: system-ui, sans-serif;
+            font-size: 1.7rem;
+            color: white;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            line-height: 1;
+            font-weight: 800;
+          }
+          #page-loader .loader-name span {
+            color: #FCBF49;
+            font-weight: 500;
+            text-transform: none;
+            font-size: 1.55rem;
+          }
+          #page-loader .loader-tagline {
+            font-family: system-ui, sans-serif;
+            font-size: 0.38rem;
+            color: #FCBF49;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-top: 5px;
+            font-weight: 800;
+            opacity: 0.9;
+          }
+          #page-loader .loader-spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid rgba(252,191,73,0.2);
+            border-top-color: #FCBF49;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+          }
+          @keyframes spin {
+            to { transform: rotate(360deg); }
+          }
+          #page-loader .loader-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: #FCBF49;
+            animation: loaderBar 1.5s ease-in-out infinite;
+          }
+          @keyframes loaderBar {
+            0% { width: 0%; left: 0; }
+            50% { width: 60%; left: 20%; }
+            100% { width: 0%; left: 100%; }
+          }
+        `}} />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+          window.addEventListener('load', function() {
+            var loader = document.getElementById('page-loader');
+            if (loader) {
+              loader.classList.add('fade-out');
+              setTimeout(function() { loader.style.display = 'none'; }, 450);
+            }
+          });
+        `}} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>
+        <div id="page-loader">
+          <div class="loader-inner">
+            <img src="/Logo only.png" alt="Visanix Global" />
+            <div class="loader-brand">
+              <div class="loader-name">VISANIX <span>Global</span></div>
+              <div class="loader-tagline">DELIVERING INDUSTRIAL EXCELLENCE WORLDWIDE</div>
+            </div>
+          </div>
+          <div class="loader-spinner"></div>
+          <div class="loader-bar"></div>
+        </div>
         <Navbar />
         <div className="page-content-wrapper">
           {children}
