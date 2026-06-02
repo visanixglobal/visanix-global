@@ -15,14 +15,14 @@ const ptfeProducts = [
   { title: 'PTFE ROD', subtitle: '(Extruded and Moulded)', slug: 'ptfe-rod', image: '/ptfe-rod-hd.jpg', specs: [{ label: 'Diameter Range', value: '6mm - 200mm' }, { label: 'Standard Lengths', value: '1mtr, 1ft, 905mm' }] },
   { title: 'PTFE SKIVED SHEET', slug: 'ptfe-sheet-skived', image: '/ptfe-skived-sheet.webp', specs: [{ label: 'Thickness Range', value: '0.5mm - 6mm' }, { label: 'Available Widths', value: '1mtr, 1.2mtr, 1.5mtr, 2mtr' }] },
   { title: 'PTFE MOULDED SHEET', slug: 'ptfe-sheet-moulded', image: '/ptfe-sheets-moulded.jpg', specs: [{ label: 'Thickness Range', value: '5mm - 100mm' }, { label: 'Standard Sizes', value: '1x1m, 2x2m, 0.6x0.6m etc.' }] },
-  { title: 'PTFE TUBES', subtitle: '(Extruded and Moulded)', slug: 'ptfe-tube', image: '/ptfe-tubes.webp', specs: [{ label: 'OD/ID Specs', value: 'Full Range Available' }, { label: 'Delivery', value: 'Coils or Straight lengths' }] },
-  { title: 'PTFE BUSH', slug: 'ptfe-bush', image: '/ptfe-bush.webp', specs: [{ label: 'OD/ID Ranges', value: 'Custom Manufactured' }, { label: 'Max Length', value: 'Up to 500mm' }] },
-  { title: 'PTFE BALL', slug: 'ptfe-ball', image: '/ptfe-ball.webp', specs: [{ label: 'Size Range', value: '3mm - 50mm' }, { label: 'Precision Grade', value: 'Standard Industrial' }] },
-  { title: 'PTFE GLAND', slug: 'ptfe-gland', image: '/ptfe-gland.webp', specs: [{ label: 'Standard Sections', value: '3x3mm up to 12x12mm' }, { label: 'Packaging', value: 'Spools of 1kg, 5kg, 10kg' }] },
-  { title: 'PTFE GASKET', slug: 'ptfe-gasket', image: '/ptfe-gasket.webp', specs: [{ label: 'Custom Cutting', value: 'As per drawings' }, { label: 'Thickness', value: '1mm - 5mm' }] },
-  { title: 'PTFE RING', slug: 'ptfe-ring', image: '/ptfe-ring.webp', specs: [{ label: 'Types', value: 'Back-up, O-Rings, V-Rings' }, { label: 'Sizing', value: 'Standard & Custom' }] },
-  { title: 'PTFE TAPE', slug: 'ptfe-tape', image: '/ptfe-tape.webp', specs: [{ label: 'Standard Width', value: '12mm, 19mm' }, { label: 'Roll Length', value: '7mtr, 10mtr, 12mtr' }] },
-  { title: 'PTFE CUSTOM', subtitle: 'Tailored Solutions', slug: null, image: '/ptfe-custom.webp', specs: [{ label: 'Customization Options', value: 'Tailored dimensions, materials, finishes' }, { label: 'Lead Time', value: '2-6 weeks' }] }
+  { title: 'PTFE TUBES', subtitle: '(Extruded and Moulded)', slug: 'ptfe-tube', image: '/ptfe-tubes.jfif', specs: [{ label: 'OD/ID Specs', value: 'Full Range Available' }, { label: 'Delivery', value: 'Coils or Straight lengths' }] },
+  { title: 'PTFE BUSH', slug: 'ptfe-bush', image: '/ptfe bush.jfif', specs: [{ label: 'OD/ID Ranges', value: 'Custom Manufactured' }, { label: 'Max Length', value: 'Up to 500mm' }] },
+  { title: 'PTFE BALL', slug: 'ptfe-ball', image: '/ptfe ball.jfif', specs: [{ label: 'Size Range', value: '3mm - 50mm' }, { label: 'Precision Grade', value: 'Standard Industrial' }] },
+  { title: 'PTFE GLAND', slug: 'ptfe-gland', image: '/ptfe gland.jfif', specs: [{ label: 'Standard Sections', value: '3x3mm up to 12x12mm' }, { label: 'Packaging', value: 'Spools of 1kg, 5kg, 10kg' }] },
+  { title: 'PTFE GASKET', slug: 'ptfe-gasket', image: '/ptfe gasket.jfif', specs: [{ label: 'Custom Cutting', value: 'As per drawings' }, { label: 'Thickness', value: '1mm - 5mm' }] },
+  { title: 'PTFE RING', slug: 'ptfe-ring', image: '/ptfe ring.jfif', specs: [{ label: 'Types', value: 'Back-up, O-Rings, V-Rings' }, { label: 'Sizing', value: 'Standard & Custom' }] },
+  { title: 'PTFE TAPE', slug: 'ptfe-tape', image: '/ptfe tape.jfif', specs: [{ label: 'Standard Width', value: '12mm, 19mm' }, { label: 'Roll Length', value: '7mtr, 10mtr, 12mtr' }] },
+  { title: 'PTFE CUSTOM', subtitle: 'Tailored Solutions', slug: null, image: '/ptfe custom.jfif', specs: [{ label: 'Customization Options', value: 'Tailored dimensions, materials, finishes' }, { label: 'Lead Time', value: '2-6 weeks' }] }
 ];
 
 const rubberProducts = [

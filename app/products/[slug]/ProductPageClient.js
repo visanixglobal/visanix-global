@@ -39,11 +39,11 @@ export default function ProductPageClient({ product }) {
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'start' }}>
                         {/* Image */}
-                        <div className="glass-card" style={{ padding: 0, overflow: 'hidden' }}>
+                        <div className="glass-card" style={{ padding: '1.5rem', overflow: 'hidden', maxWidth: '320px', margin: '0 auto', width: '100%' }}>
                             <img
                                 src={product.image}
                                 alt={product.imageAlt}
-                                style={{ width: '100%', height: '350px', objectFit: 'cover', display: 'block' }}
+                                style={{ width: '100%', height: '240px', objectFit: 'contain', display: 'block', background: '#f8fafc', borderRadius: '8px' }}
                             />
                         </div>
 
