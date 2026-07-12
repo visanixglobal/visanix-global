@@ -496,3 +496,96 @@ a {
     grid-column: span 1;
   }
 }
+
+/* ── Calculator Page (/calculator) ─────────────────────────────────────────── */
+.calc-sheet {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 3px solid #20211F;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.calc-header h1 {
+  font-size: 22px;
+  margin: 0;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #20211F;
+  font-family: ui-monospace, SFMono-Regular, "Roboto Mono", Consolas, monospace;
+}
+.calc-tag {
+  font-family: ui-monospace, SFMono-Regular, "Roboto Mono", Consolas, monospace;
+  font-size: 11px;
+  color: #5B5C56;
+  border: 1px solid #5B5C56;
+  padding: 3px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.calc-doc-meta {
+  font-family: ui-monospace, SFMono-Regular, "Roboto Mono", Consolas, monospace;
+  font-size: 11px;
+  color: #5B5C56;
+  text-align: right;
+  line-height: 1.5;
+}
+.calc-panel {
+  background: #FAF9F5;
+  border: 1px solid #20211F;
+  box-shadow: 4px 4px 0 rgba(32, 33, 31, 0.12);
+  padding: 22px;
+  margin-bottom: 26px;
+}
+.calc-panel-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin: 0 0 16px;
+  color: #7C4220;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, SFMono-Regular, "Roboto Mono", Consolas, monospace;
+}
+.calc-panel-title::before {
+  content: "";
+  width: 14px;
+  height: 2px;
+  background: #A65A2E;
+  display: inline-block;
+}
+.calc-quick-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 720px) {
+  .calc-quick-grid { grid-template-columns: 1fr; }
+}
+.calc-bg {
+  background:
+    linear-gradient(#D8D3C6 1px, transparent 1px) 0 0 / 100% 28px,
+    linear-gradient(90deg, #D8D3C6 1px, transparent 1px) 0 0 / 28px 100%,
+    #EDEAE2;
+  background-attachment: local;
+  min-height: 100vh;
+}
+@keyframes shakeGate {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-8px); }
+  30%       { transform: translateX(8px); }
+  45%       { transform: translateX(-6px); }
+  60%       { transform: translateX(6px); }
+  75%       { transform: translateX(-3px); }
+  90%       { transform: translateX(3px); }
+}
