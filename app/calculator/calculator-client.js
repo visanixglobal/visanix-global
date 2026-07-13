@@ -398,7 +398,7 @@ function QuickConverter() {
         </div>
       </div>
       <p style={{ fontFamily: monoFont, fontSize: '10px', color: '#5B5C56', marginTop: '10px', lineHeight: '1.6' }}>
-        Densities are typical values for each grade — actual density varies by supplier batch and filler ratio. Edit "Custom" to match your material&apos;s datasheet figure for precise dealer quotes.
+        Densities are typical values for each grade — actual density varies by supplier batch and filler ratio. Edit &quot;Custom&quot; to match your material&apos;s datasheet figure for precise dealer quotes.
       </p>
     </div>
   );
