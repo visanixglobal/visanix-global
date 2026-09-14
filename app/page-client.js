@@ -3,10 +3,31 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import CTASection from '@/components/CTASection';
 
-const rotatingTexts = ["Industrial Goods", "Polymer Solutions", "Engineered Parts", "Bespoke Components"];
-const slideImages = ["/hd-1.jpg", "/ptfe-rod-hd.jpg", "/ptfe-flexible-sheet.jpg"];
-
 export default function Home() {
+  const rotatingTexts = ["Industrial Goods", "Polymer Solutions", "Engineered Parts", "Bespoke Components"];
+  const slideImages = [
+    "/hd-1.jpg",
+    "/ptfe-rod-hd.jpg",
+    "/ptfe-flexible-sheet.jpg",
+    "/cast_nylon_sheet.png",
+    "/cast_nylon_rod.png",
+    "/NYLON_Square_Rod.png",
+    "/PVC_Rigid_sheet.png",
+    "/PU_Sheet.png",
+    "/PU_Rod.png",
+    "/Derlin_Sheet.png",
+    "/Derlin_Rod.png",
+    "/PEEK_Sheet.png",
+    "/Acrylic_Rod.png",
+    "/Silicon_Sheet.png",
+    "/Silicon_Rubber_Tube.png",
+    "/ptfe ball.jfif",
+    "/ptfe bush.jfif",
+    "/ptfe ring.jfif",
+    "/ptfe tape.jfif",
+    "/ptfe-sheets-moulded.jpg",
+  ];
+  
   const [textIndex, setTextIndex] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
 
@@ -17,13 +38,13 @@ export default function Home() {
 
     const slideTimer = setInterval(() => {
       setSlideIndex((prev) => (prev + 1) % slideImages.length);
-    }, 4000);
+    }, 3000);
 
     return () => {
       clearInterval(textTimer);
       clearInterval(slideTimer);
     };
-  }, [rotatingTexts.length, slideImages.length]);
+  }, []);
 
   const currentImage = slideImages[slideIndex] || slideImages[0];
 
@@ -43,17 +64,20 @@ export default function Home() {
         padding: '30px 0 120px',
         textAlign: 'center'
       }}>
-        {/* Background Industrial Image */}
-        <div style={{
-          position: 'absolute',
-          top: 0, left: 0, width: '100%', height: '100%',
-          backgroundImage: 'url("/hd-1.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.35,
-          filter: 'grayscale(60%) brightness(0.3) blur(1px)',
-          zIndex: 1
-        }}></div>
+        {/* Background Industrial Image - Rotating */}
+        {slideImages.map((bgImg, idx) => (
+          <div key={idx} style={{
+            position: 'absolute',
+            top: 0, left: 0, width: '100%', height: '100%',
+            backgroundImage: `url("${bgImg}")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: idx === slideIndex ? 0.55 : 0,
+            filter: 'grayscale(40%) brightness(0.5) blur(0.5px)',
+            zIndex: 1,
+            transition: 'opacity 1.2s ease-in-out'
+          }}></div>
+        ))}
 
         {/* Animated Background Glows */}
         <div style={{
@@ -109,7 +133,7 @@ export default function Home() {
               fontWeight: '500',
               letterSpacing: '0.3px'
             }}>
-              Visanix <span style={{ fontFamily: 'var(--font-montserrat), sans-serif', fontWeight: '600' }}>Global</span> is your trusted <strong style={{ color: 'var(--accent)', fontWeight: '800' }}>PTFE and Teflon supplier across India</strong> — supplying virgin and filled PTFE grades, fluoropolymer engineering materials, and integrated supply chain solutions to chemical plants, pharmaceutical manufacturers, and industrial OEM manufacturers.
+              Visanix <span style={{ fontFamily: 'var(--font-montserrat), sans-serif', fontWeight: '600' }}>Global</span> supplies <strong style={{ color: 'var(--accent)', fontWeight: '800' }}>PTFE, fluoropolymers, engineering plastics, and industrial materials</strong> to chemical plants, pharmaceutical manufacturers, industrial OEMs, traders, and retailers across India. From standard materials to application-specific requirements, we provide dependable sourcing and integrated supply solutions.
             </p>
 
             <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 11 }}>
@@ -156,6 +180,10 @@ export default function Home() {
                 .hero-section { padding: 100px 0 80px !important; }
                 .stats-container { display: none !important; }
               }
+              @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+              }
             `}</style>
             {[
               { val: 'Reliable', label: 'Global Network' },
@@ -200,20 +228,27 @@ export default function Home() {
                   zIndex: 2,
                   background: 'white'
                 }}>
-                  <img
-                    key={slideIndex}
-                    src={currentImage}
-                    alt="Industrial Excellence Showcase"
-                    className="rotate-text-enter"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'contain',
-                      padding: currentImage?.includes('hd-1') ? '0' : '2rem',
-                      background: '#f8fafc',
-                      filter: 'contrast(1.02)'
-                    }}
-                  />
+                  {slideImages.map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img}
+                      alt="Industrial Excellence Showcase"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain',
+                        padding: img?.includes('hd-1') ? '0' : '2rem',
+                        background: '#f8fafc',
+                        filter: 'contrast(1.02)',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        opacity: idx === slideIndex ? 1 : 0,
+                        transition: 'opacity 0.8s ease-in-out',
+                        animation: idx === slideIndex ? 'fadeIn 0.8s ease-in-out' : 'none'
+                      }}
+                    />
+                  ))}
 
                   <div style={{
                     position: 'absolute',
@@ -227,12 +262,13 @@ export default function Home() {
                     fontSize: '0.65rem',
                     fontWeight: '800',
                     textTransform: 'uppercase',
-                    letterSpacing: '1px'
+                    letterSpacing: '1px',
+                    zIndex: 10
                   }}>
-                    {currentImage?.includes('rod-hd') ? 'PTFE Rod' : currentImage?.includes('flexible-sheet') ? 'Custom PTFE' : 'Industrial'}
+                    {slideImages[slideIndex]?.includes('rod-hd') ? 'PTFE Rod' : slideImages[slideIndex]?.includes('flexible-sheet') ? 'Custom PTFE' : 'Industrial'}
                   </div>
 
-                  <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '8px' }}>
+                  <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '8px', zIndex: 10 }}>
                     {slideImages.map((_, i) => (
                       <div key={i} style={{
                         width: i === slideIndex ? '20px' : '6px',
@@ -266,10 +302,10 @@ export default function Home() {
               <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '2px' }}>Strategic Solutions</span>
               <h2 style={{ fontSize: '3rem', margin: '1rem 0 2rem' }}>Comprehensive <br /><span style={{ color: 'var(--secondary)' }}>Industrial Goods.</span></h2>
               <p style={{ fontSize: '1.15rem', color: 'var(--text-main)', opacity: 0.7, lineHeight: '1.8', fontFamily: 'var(--font-outfit), sans-serif', marginBottom: '1.5rem' }}>
-                As a leading <strong>engineering plastics supplier in Gurugram</strong>, we bridge the gap between complex engineering needs and global manufacturing capabilities. Our industrial goods division ensures that your operations have access to high-performance components with full material traceability.
+                As a leading <strong>PTFE and engineering plastics supplier in Delhi NCR</strong>, we combine technical expertise with global manufacturing capabilities. Our industrial materials division ensures your operations have access to high-performance polymers and precision components with full material traceability and quality assurance.
               </p>
               <p style={{ fontSize: '1rem', color: 'var(--text-main)', opacity: 0.65, lineHeight: '1.8', fontFamily: 'var(--font-outfit), sans-serif', marginBottom: '2.5rem' }}>
-                We supply <strong>virgin and filled PTFE grades</strong> — including glass filled, carbon filled, and graphite filled — as well as Teflon-branded equivalents, rubber seals, and custom machined fluoropolymer components to B2B customers across India and internationally.
+                We supply <strong>virgin and filled PTFE grades</strong> — including glass filled, carbon filled, and graphite filled — as well as a comprehensive range of <strong>engineering plastics</strong>: <strong>cast nylon (PA6), polyurethane (PU), polypropylene (PP), PVC, PEEK, Delrin (POM), silicone, acrylic (PMMA), epoxy laminated sheets (FR4/G10)</strong>, and precision-machined custom components for B2B customers across India and internationally.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                 <div>
@@ -356,7 +392,7 @@ export default function Home() {
                 opacity: 0.8,
                 fontFamily: 'var(--font-outfit), sans-serif'
               }}>
-                Visanix Global combines deep sourcing expertise with technical precision. As a trusted <strong>fluoropolymer supplier in India</strong>, we specialise in high-performance PTFE — also widely known as Teflon — across a wide range of industrial engineered goods with a focus on global supply chain excellence. From virgin PTFE rods and sheets to filled grades and custom machined components, we serve chemical plants, pharmaceutical manufacturers, and industrial OEM manufacturers across Gurugram, Delhi NCR, and pan-India.
+                Visanix Global combines deep sourcing expertise with technical precision. As a trusted <strong>PTFE, Teflon, and engineering plastics supplier in India</strong>, we specialise in high-performance fluoropolymers and advanced polymer materials across a comprehensive range of industrial applications. From virgin PTFE rods and sheets to filled grades, cast nylon, polyurethane seals and components, polypropylene, PVC, PEEK, Delrin, silicone, acrylic, epoxy laminates, and custom parts — we serve chemical plants, pharmaceutical manufacturers, and industrial OEM manufacturers across Delhi NCR and pan-India.
               </p>
               <div style={{ display: 'flex', gap: '4rem', marginBottom: '3.5rem', flexWrap: 'wrap' }}>
                 <div>

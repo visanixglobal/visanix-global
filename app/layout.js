@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import ContactPopup from '@/components/ContactPopup'
+import ClientLayoutWrapper from '@/components/ClientLayoutWrapper'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -37,11 +38,11 @@ export const metadata = {
     default: 'Visanix Global | PTFE Supplier & Industrial Polymer Solutions',
     template: '%s',
   },
-  description: 'Visanix Global — PTFE supplier and exporter in Gurugram, India. High-performance PTFE rods, sheets, tubes, gaskets, rubber seals and custom engineered parts.',
-  keywords: 'PTFE supplier India, PTFE rod, PTFE sheet, PTFE tube, PTFE gasket, industrial polymer, engineering materials, Gurugram, export',
+  description: 'Visanix Global — PTFE and engineering plastics supplier in Delhi NCR, India. High-performance PTFE products and precision engineering plastic materials.',
+  keywords: 'PTFE supplier India, PTFE rod, PTFE sheet, PTFE tube, engineering plastics supplier India, POM, cast nylon, PEEK, UHMWPE, Delhi NCR, Paschim Vihar, export',
   openGraph: {
     title: 'Visanix Global | PTFE Supplier & Industrial Polymer Solutions',
-    description: 'PTFE supplier and exporter in Gurugram, India. High-performance PTFE rods, sheets, tubes, gaskets, rubber seals and custom engineered parts.',
+    description: 'PTFE and engineering plastics supplier in Delhi NCR, India. High-performance PTFE products and precision engineering plastic materials.',
     url: 'https://www.visanixglobal.com',
     siteName: 'Visanix Global',
     locale: 'en_US',
@@ -58,7 +59,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Visanix Global | PTFE Supplier India',
-    description: 'PTFE supplier and exporter in Gurugram, India. Rods, sheets, tubes, gaskets and custom parts.',
+    description: 'PTFE and engineering plastics supplier in Delhi NCR, India. Rods, sheets, tubes, and custom machined components.',
     images: ['/og-image.png'],
   },
   icons: {
@@ -79,20 +80,20 @@ export default function RootLayout({ children }) {
     "url": "https://www.visanixglobal.com",
     "logo": "https://www.visanixglobal.com/logo.png",
     "image": "https://www.visanixglobal.com/og-image.png",
-    "description": "Visanix Global is a trusted PTFE supplier and exporter based in Gurugram, India. We supply PTFE rods, sheets, tubes, gaskets, rubber seals and custom engineered parts globally.",
+    "description": "Visanix Global is a trusted PTFE and engineering plastics supplier based in Delhi NCR, India. We supply PTFE products and precision engineering plastic materials globally.",
     "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "LGF-72/ Sector 30",
-      "addressLocality": "Gurugram",
-      "addressRegion": "Haryana",
-      "postalCode": "122022",
+      "streetAddress": "B-1/192, Paschim Vihar",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110063",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "28.4595",
-      "longitude": "77.0266"
+      "latitude": "28.6679",
+      "longitude": "77.0993"
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -128,6 +129,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${outfit.variable} ${montserrat.variable} ${nunito.variable}`}>
       <head>
+        {/* Google Ads tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18348585934"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18348585934');
+          `
+        }} />
         <style dangerouslySetInnerHTML={{
           __html: `
           .navbar-logo { height: 90px !important; width: auto !important; max-height: 90px !important; }
@@ -247,8 +258,10 @@ export default function RootLayout({ children }) {
         <div className="page-content-wrapper">
           {children}
         </div>
-        <WhatsAppButton />
-        <ContactPopup />
+        <ClientLayoutWrapper>
+          <WhatsAppButton />
+          <ContactPopup />
+        </ClientLayoutWrapper>
         <Footer />
       </body>
     </html>

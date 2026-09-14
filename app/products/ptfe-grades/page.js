@@ -2,19 +2,19 @@ import Link from 'next/link'
 
 export const metadata = {
     title: 'PTFE Grades & Specifications | Virgin, Glass Filled, Carbon Filled | Visanix Global',
-    description: 'Complete guide to PTFE material grades — Virgin PTFE, 15% & 25% Glass Filled, 25% Carbon Filled, Carbon+Graphite Filled, 25% Graphite Filled. Supplier in Gurugram, India.',
+    description: 'Complete guide to PTFE material grades — Virgin PTFE, 15% & 25% Glass Filled, 25% Carbon Filled, Carbon+Graphite Filled, 25% Graphite Filled. Supplier in Delhi NCR, India.',
     alternates: {
         canonical: '/products/ptfe-grades',
     },
     openGraph: {
         title: 'PTFE Grades & Specifications | Visanix Global',
-        description: 'Complete guide to PTFE material grades — Virgin PTFE, Glass Filled, Carbon Filled, Graphite Filled. Supplier in Gurugram, India.',
+        description: 'Complete guide to PTFE material grades — Virgin PTFE, Glass Filled, Carbon Filled, Graphite Filled. Supplier in Delhi NCR, India.',
         url: 'https://www.visanixglobal.com/products/ptfe-grades',
     },
     twitter: {
         card: 'summary_large_image',
         title: 'PTFE Grades & Specifications | Visanix Global',
-        description: 'Complete guide to PTFE material grades — Virgin, Glass Filled, Carbon Filled, Graphite Filled. Supplier in Gurugram, India.',
+        description: 'Complete guide to PTFE material grades — Virgin, Glass Filled, Carbon Filled, Graphite Filled. Supplier in Delhi NCR, India.',
         images: ['https://www.visanixglobal.com/og-image.png'],
     },
 }
@@ -38,7 +38,7 @@ const grades = [
         ],
         applications: ['Pharmaceutical seals and gaskets', 'Food contact components', 'Chemical lining and gaskets', 'Electrical insulation', 'Laboratory equipment', 'Semiconductor manufacturing'],
         industries: ['Pharmaceutical', 'Food Processing', 'Chemical Processing', 'Electrical & Electronics'],
-        keywords: 'virgin PTFE supplier India, virgin Teflon supplier, pure PTFE supplier Gurugram',
+        keywords: 'virgin PTFE supplier India, virgin Teflon supplier, pure PTFE supplier Delhi NCR',
     },
     {
         id: '02',
@@ -160,7 +160,7 @@ export default function PTFEGradesPage() {
             {
                 "@type": "Question",
                 "name": "What PTFE grades do you supply in India?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Visanix Global supplies all major PTFE grades including Virgin PTFE, 15% Glass Filled, 25% Glass Filled, 25% Carbon Filled, Carbon + Graphite Filled, and 25% Graphite Filled from our Gurugram facility across India." }
+                "acceptedAnswer": { "@type": "Answer", "text": "Visanix Global supplies all major PTFE grades including Virgin PTFE, 15% Glass Filled, 25% Glass Filled, 25% Carbon Filled, Carbon + Graphite Filled, and 25% Graphite Filled from our Delhi NCR facility across India." }
             },
             {
                 "@type": "Question",
@@ -207,7 +207,7 @@ export default function PTFEGradesPage() {
                             PTFE Material <span className="gradient-text">Grades Available</span>
                         </h1>
                         <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: '700px', fontSize: '1.1rem', lineHeight: '1.7', fontFamily: 'var(--font-outfit), sans-serif' }}>
-                            Visanix Global supplies all 6 major PTFE grades — also known as Teflon grades — from our Gurugram facility across India. Virgin PTFE, glass filled, carbon filled, graphite filled, and dual-filler grades for every industrial application.
+                            Visanix Global supplies all 6 major PTFE grades — also known as Teflon grades — from our Delhi NCR facility across India. Virgin PTFE, glass filled, carbon filled, graphite filled, and dual-filler grades for every industrial application.
                         </p>
                     </div>
                 </section>
@@ -329,7 +329,7 @@ export default function PTFEGradesPage() {
                             </h2>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '800px' }}>
                                 {[
-                                    { q: 'What PTFE grades do you supply in India?', a: 'Visanix Global supplies all major PTFE grades including Virgin PTFE, 15% Glass Filled, 25% Glass Filled, 25% Carbon Filled, Carbon + Graphite Filled, and 25% Graphite Filled from our Gurugram facility across India.' },
+                                    { q: 'What PTFE grades do you supply in India?', a: 'Visanix Global supplies all major PTFE grades including Virgin PTFE, 15% Glass Filled, 25% Glass Filled, 25% Carbon Filled, Carbon + Graphite Filled, and 25% Graphite Filled from our Delhi NCR facility across India.' },
                                     { q: 'What is the difference between virgin PTFE and filled PTFE?', a: 'Virgin PTFE is pure PTFE with maximum chemical resistance and electrical insulation. Filled PTFE grades contain additives (glass, carbon, graphite) that improve specific mechanical properties like wear resistance, stiffness, or thermal conductivity, at a slight reduction in chemical resistance.' },
                                     { q: 'Which PTFE grade is best for chemical applications?', a: 'Virgin PTFE offers the highest chemical resistance and is recommended for most chemical processing applications. For applications requiring improved mechanical strength, 15% or 25% glass filled PTFE is recommended.' },
                                     { q: 'Which PTFE grade is best for wear applications?', a: '25% Carbon Filled PTFE or Carbon + Graphite Filled PTFE are recommended for dynamic wear applications such as piston rings, seals, and bushes where the component is in continuous motion.' },
@@ -347,7 +347,7 @@ export default function PTFEGradesPage() {
                         <div className="glass-card" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center', padding: '4rem 2rem', border: 'none' }}>
                             <h3 style={{ color: 'white', fontSize: '2rem', marginBottom: '1rem' }}>Not Sure Which Grade You Need?</h3>
                             <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '500px', margin: '0 auto 2rem', fontFamily: 'var(--font-outfit), sans-serif' }}>
-                                Tell us your application, operating temperature, chemical environment, and load conditions. We will recommend the right PTFE grade and supply it from Gurugram across India.
+                                Tell us your application, operating temperature, chemical environment, and load conditions. We will recommend the right PTFE grade and supply it from Delhi NCR across India.
                             </p>
                             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                                 <Link href="/contact" className="btn btn-primary" style={{ padding: '1rem 2.5rem' }}>Request Grade Advice</Link>

@@ -107,7 +107,7 @@ export default function About() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '6rem', alignItems: 'center' }}>
             <div style={{ position: 'relative' }}>
               <div style={{ position: 'absolute', top: '-20px', left: '-20px', width: '100px', height: '100px', borderTop: '4px solid var(--accent)', borderLeft: '4px solid var(--accent)', opacity: 0.3 }}></div>
-              <img src="/ptfe-rod-hd.jpg" alt="PTFE Rod – Visanix Global PTFE Supplier Gurugram India" style={{ width: '100%', borderRadius: '24px', boxShadow: '0 40px 80px rgba(0,0,0,0.15)' }} />
+              <img src="/ptfe-rod-hd.jpg" alt="PTFE Rod – Visanix Global PTFE Supplier Delhi NCR India" style={{ width: '100%', borderRadius: '24px', boxShadow: '0 40px 80px rgba(0,0,0,0.15)' }} />
             </div>
 
             <div>

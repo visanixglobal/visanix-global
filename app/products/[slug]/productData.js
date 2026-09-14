@@ -2,7 +2,7 @@ export const productData = {
     'ptfe-rod': {
         title: 'PTFE Rod',
         teflonName: 'Teflon Rod',
-        teflonNote: 'PTFE rods are also commonly referred to as Teflon rods. Teflon is a brand name for PTFE (polytetrafluoroethylene) originally developed by DuPont. Whether you search for a Teflon rod or a PTFE rod, Visanix Global supplies both virgin and filled grades from Gurugram across India.',
+        teflonNote: 'PTFE rods are also commonly referred to as Teflon rods. Teflon is a brand name for PTFE (polytetrafluoroethylene) originally developed by DuPont. Whether you search for a Teflon rod or a PTFE rod, Visanix Global supplies both virgin and filled grades from Delhi NCR across India.',
         subtitle: 'Extruded and Moulded',
         sku: 'VG-PTFE-ROD',
         mpn: 'VG-PTFE-ROD',
@@ -10,7 +10,7 @@ export const productData = {
         imageAlt: 'PTFE Rod supplier India - Visanix Global',
         heroDescription: 'High-purity PTFE rods available in extruded and moulded grades. Supplied in standard diameters from 6mm to 200mm for machining into bushes, bearings, seals, and custom components.',
         metaTitle: 'PTFE Rod Supplier India | Extruded & Moulded | Visanix Global',
-        metaDescription: 'Buy PTFE rods in 6mm–200mm diameter from Visanix Global, Gurugram. Extruded and moulded grades. Virgin, glass-filled, carbon-filled. Custom lengths available.',
+        metaDescription: 'Buy PTFE rods in 6mm–200mm diameter from Visanix Global, Delhi NCR. Extruded and moulded grades. Virgin, glass-filled, carbon-filled. Custom lengths available.',
         specs: [
             { label: 'Diameter Range', value: '6mm – 200mm' },
             { label: 'Standard Lengths', value: '1 mtr, 1 ft, 905mm' },
@@ -44,8 +44,8 @@ export const productData = {
         image: '/ptfe-skived-sheet.webp',
         imageAlt: 'PTFE Skived Sheet supplier India - Visanix Global',
         heroDescription: 'Precision skived PTFE sheets offering excellent surface finish and consistent thickness. Available in widths up to 2 metres for gaskets, linings, and electrical insulation.',
-        metaTitle: 'PTFE Skived Sheet Supplier India | Visanix Global Gurugram',
-        metaDescription: 'Buy PTFE skived sheets 0.5mm–6mm thick, widths up to 2mtr. Supplied by Visanix Global, Gurugram. Ideal for gaskets, linings, and insulation. Custom cutting available.',
+        metaTitle: 'PTFE Skived Sheet Supplier India | Visanix Global Delhi NCR',
+        metaDescription: 'Buy PTFE skived sheets 0.5mm–6mm thick, widths up to 2mtr. Supplied by Visanix Global, Delhi NCR. Ideal for gaskets, linings, and insulation. Custom cutting available.',
         specs: [
             { label: 'Thickness Range', value: '0.5mm – 6mm' },
             { label: 'Available Widths', value: '1mtr, 1.2mtr, 1.5mtr, 2mtr' },
@@ -80,7 +80,7 @@ export const productData = {
         imageAlt: 'PTFE Moulded Sheet supplier India - Visanix Global',
         heroDescription: 'Compression-moulded PTFE sheets for heavy-duty structural and sealing applications. Available in thicknesses from 5mm to 100mm and standard slab sizes.',
         metaTitle: 'PTFE Moulded Sheet Supplier India | 5mm–100mm | Visanix Global',
-        metaDescription: 'Buy PTFE moulded sheets 5mm–100mm thick from Visanix Global, Gurugram. Standard sizes 1x1m, 2x2m. Virgin and filled grades. Custom machining available.',
+        metaDescription: 'Buy PTFE moulded sheets 5mm–100mm thick from Visanix Global, Delhi NCR. Standard sizes 1x1m, 2x2m. Virgin and filled grades. Custom machining available.',
         specs: [
             { label: 'Thickness Range', value: '5mm – 100mm' },
             { label: 'Standard Sizes', value: '1×1m, 2×2m, 0.6×0.6m' },
@@ -115,7 +115,7 @@ export const productData = {
         imageAlt: 'PTFE Tube supplier India - Visanix Global',
         heroDescription: 'PTFE tubes in extruded and moulded grades for fluid handling, electrical insulation, and chemical transfer. Available in coils or straight lengths across a full OD/ID range.',
         metaTitle: 'PTFE Tube Supplier India | Extruded & Moulded | Visanix Global',
-        metaDescription: 'Buy PTFE tubes in full OD/ID range from Visanix Global, Gurugram. Extruded and moulded grades. Supplied in coils or straight lengths. Custom sizes available.',
+        metaDescription: 'Buy PTFE tubes in full OD/ID range from Visanix Global, Delhi NCR. Extruded and moulded grades. Supplied in coils or straight lengths. Custom sizes available.',
         specs: [
             { label: 'OD/ID Specs', value: 'Full Range Available' },
             { label: 'Delivery Form', value: 'Coils or Straight Lengths' },
@@ -150,7 +150,7 @@ export const productData = {
         imageAlt: 'PTFE Bush supplier India - Visanix Global',
         heroDescription: 'Precision-machined PTFE bushes for bearing and sliding applications. Manufactured to your OD/ID specifications in virgin and filled grades up to 500mm length.',
         metaTitle: 'PTFE Bush Manufacturer India | Custom Sizes | Visanix Global',
-        metaDescription: 'Custom PTFE bushes manufactured to your drawings by Visanix Global, Gurugram. Virgin and filled grades. OD/ID to specification, up to 500mm length.',
+        metaDescription: 'Custom PTFE bushes manufactured to your drawings by Visanix Global, Delhi NCR. Virgin and filled grades. OD/ID to specification, up to 500mm length.',
         specs: [
             { label: 'OD/ID Ranges', value: 'Custom Manufactured' },
             { label: 'Max Length', value: 'Up to 500mm' },
@@ -185,7 +185,7 @@ export const productData = {
         imageAlt: 'PTFE Ball supplier India - Visanix Global',
         heroDescription: 'Precision PTFE balls for ball valves, check valves, and flow control applications. Available from 3mm to 50mm in standard industrial grade.',
         metaTitle: 'PTFE Ball Supplier India | 3mm–50mm | Visanix Global',
-        metaDescription: 'Buy PTFE balls 3mm–50mm from Visanix Global, Gurugram. Standard industrial grade. Used in ball valves, check valves, and flow control. Bulk supply available.',
+        metaDescription: 'Buy PTFE balls 3mm–50mm from Visanix Global, Delhi NCR. Standard industrial grade. Used in ball valves, check valves, and flow control. Bulk supply available.',
         specs: [
             { label: 'Size Range', value: '3mm – 50mm diameter' },
             { label: 'Precision Grade', value: 'Standard Industrial' },
@@ -219,8 +219,8 @@ export const productData = {
         image: '/ptfe gland.jfif',
         imageAlt: 'PTFE Gland Packing supplier India - Visanix Global',
         heroDescription: 'PTFE gland packing in standard square sections from 3×3mm to 12×12mm. Supplied on spools of 1kg, 5kg, and 10kg for pump and valve stem sealing.',
-        metaTitle: 'PTFE Gland Packing Supplier India | Visanix Global Gurugram',
-        metaDescription: 'Buy PTFE gland packing 3×3mm to 12×12mm from Visanix Global, Gurugram. Spools of 1kg, 5kg, 10kg. For pump and valve stem sealing. Bulk supply available.',
+        metaTitle: 'PTFE Gland Packing Supplier India | Visanix Global Delhi NCR',
+        metaDescription: 'Buy PTFE gland packing 3×3mm to 12×12mm from Visanix Global, Delhi NCR. Spools of 1kg, 5kg, 10kg. For pump and valve stem sealing. Bulk supply available.',
         specs: [
             { label: 'Standard Sections', value: '3×3mm up to 12×12mm' },
             { label: 'Packaging', value: 'Spools of 1kg, 5kg, 10kg' },
@@ -255,7 +255,7 @@ export const productData = {
         imageAlt: 'PTFE Gasket supplier India - Visanix Global',
         heroDescription: 'Custom-cut PTFE gaskets for flanged joints in chemical, pharmaceutical, and food processing pipelines. Cut to your drawings from 1mm to 5mm sheet.',
         metaTitle: 'PTFE Gasket Manufacturer India | Custom Cut | Visanix Global',
-        metaDescription: 'Custom PTFE gaskets cut to your drawings by Visanix Global, Gurugram. 1mm–5mm thickness. For chemical, pharma, and food pipelines. Fast turnaround.',
+        metaDescription: 'Custom PTFE gaskets cut to your drawings by Visanix Global, Delhi NCR. 1mm–5mm thickness. For chemical, pharma, and food pipelines. Fast turnaround.',
         specs: [
             { label: 'Custom Cutting', value: 'As per drawings / DXF files' },
             { label: 'Thickness', value: '1mm – 5mm' },
@@ -290,7 +290,7 @@ export const productData = {
         imageAlt: 'PTFE Ring supplier India - Visanix Global',
         heroDescription: 'PTFE rings including back-up rings, O-rings, and V-rings in standard and custom sizes. Used in hydraulic, pneumatic, and chemical sealing applications.',
         metaTitle: 'PTFE Ring Supplier India | Back-up, O-Ring, V-Ring | Visanix Global',
-        metaDescription: 'Buy PTFE back-up rings, O-rings, and V-rings from Visanix Global, Gurugram. Standard and custom sizes. For hydraulic, pneumatic, and chemical sealing.',
+        metaDescription: 'Buy PTFE back-up rings, O-rings, and V-rings from Visanix Global, Delhi NCR. Standard and custom sizes. For hydraulic, pneumatic, and chemical sealing.',
         specs: [
             { label: 'Types', value: 'Back-up Rings, O-Rings, V-Rings' },
             { label: 'Sizing', value: 'Standard & Custom' },
@@ -325,7 +325,7 @@ export const productData = {
         imageAlt: 'PTFE Thread Seal Tape supplier India - Visanix Global',
         heroDescription: 'PTFE thread seal tape in standard widths of 12mm and 19mm. Supplied in rolls of 7m, 10m, and 12m for pipe thread sealing in plumbing, gas, and chemical applications.',
         metaTitle: 'PTFE Thread Seal Tape Supplier India | Visanix Global',
-        metaDescription: 'Buy PTFE thread seal tape 12mm and 19mm wide from Visanix Global, Gurugram. Rolls of 7m, 10m, 12m. For plumbing, gas, and chemical pipe threads. Bulk supply.',
+        metaDescription: 'Buy PTFE thread seal tape 12mm and 19mm wide from Visanix Global, Delhi NCR. Rolls of 7m, 10m, 12m. For plumbing, gas, and chemical pipe threads. Bulk supply.',
         specs: [
             { label: 'Standard Widths', value: '12mm, 19mm' },
             { label: 'Roll Length', value: '7mtr, 10mtr, 12mtr' },

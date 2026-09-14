@@ -29,6 +29,31 @@ export default function sitemap() {
     { url: `${baseUrl}/products/ptfe-grades`, priority: 0.85, changeFrequency: 'monthly', lastModified: '2026-05-28' },
   ];
 
+  const epSlugs = [
+    'cast-nylon-sheet', 'cast-nylon-rod', 'nylon-rod',
+    'pu-sheet', 'pu-rod', 'pu-rod-seal', 'pu-piston-seal', 'pu-wiper-seal',
+    'pvc-sheet',
+    'pp-sheet', 'pp-rod',
+    'delrin-sheet', 'delrin-rod',
+    'peek-sheet',
+    'acrylic-rod',
+    'epoxy-laminated-sheet',
+    'silicone-sheet', 'silicone-tube',
+    'insulation-rod',
+    'ep-custom-components',
+  ];
+
+  const epCategoryRoute = [
+    { url: `${baseUrl}/engineering-plastics`, priority: 0.9, changeFrequency: 'weekly', lastModified: '2026-07-22' },
+  ];
+
+  const epProductRoutes = epSlugs.map((slug) => ({
+    url: `${baseUrl}/engineering-plastics/${slug}`,
+    priority: 0.85,
+    changeFrequency: 'monthly',
+    lastModified: '2026-07-22',
+  }));
+
   const locationRoutes = [
     { url: `${baseUrl}/ptfe-supplier-gurugram`, priority: 0.7, changeFrequency: 'monthly', lastModified: '2026-05-28' },
     { url: `${baseUrl}/ptfe-supplier-delhi`, priority: 0.7, changeFrequency: 'monthly', lastModified: '2026-05-28' },
@@ -51,6 +76,8 @@ export default function sitemap() {
     ...staticRoutes,
     ...productRoutes,
     ...productStaticRoutes,
+    ...epCategoryRoute,
+    ...epProductRoutes,
     ...locationRoutes,
     ...industryRoutes,
   ];

@@ -31,14 +31,16 @@ const rubberProducts = [
   { title: 'RUBBER GASKETS', image: '/Rubber Gaskets.jfif', specs: [{ label: 'Processes', value: 'Die-cut, Lathe-cut, Flash-cut' }, { label: 'Hardness', value: '30 - 90 Shore A' }] },
   { title: 'EXTRUDED PROFILES', subtitle: 'Custom Cord & Strips', image: '/rubber-showcase.png', specs: [{ label: 'Shapes', value: 'D-section, P-section, Squares' }, { label: 'Customization', value: 'As per drawings' }] },
   { title: 'RUBBER SHEETS', image: '/rubber sheet.jfif', specs: [{ label: 'Materials', value: 'Neoprene, Nitrile, EPDM' }, { label: 'Thickness', value: '1mm - 50mm' }] },
-  { title: 'ANTI-VIBRATION MOUNTS', image: '/anti vibration.jfif', specs: [{ label: 'Applications', value: 'Pumps, Motors, HVAC' }, { label: 'Types', value: 'Cylindrical, Sandwich' }] }
+  { title: 'ANTI-VIBRATION MOUNTS', image: '/anti vibration.jfif', specs: [{ label: 'Applications', value: 'Pumps, Motors, HVAC' }, { label: 'Types', value: 'Cylindrical, Sandwich' }] },
+  { title: 'SILICONE SHEET', image: '/Silicon_Sheet.png', specs: [{ label: 'Temperature Range', value: '-60°C to +230°C' }, { label: 'Grade', value: 'Food Grade (FDA), Industrial' }] },
+  { title: 'SILICONE TUBE', image: '/Silicon_Rubber_Tube.png', specs: [{ label: 'Temperature Range', value: '-60°C to +230°C' }, { label: 'Grade', value: 'Food Grade (FDA), Industrial' }] }
 ];
 
 const rubberGrades = [
   { id: 'R1', title: 'Nitrile (NBR)', desc: 'Excellent resistance to petroleum-based oils and fuels. Standard for industrial sealing.', tag: 'Oil Resistant', color: '#10b981' },
   { id: 'R2', title: 'Viton (FKM)', desc: 'Premium fluoroelastomer for high temperature and aggressive chemical environments.', tag: 'High Temp', color: '#ef4444' },
   { id: 'R3', title: 'EPDM', desc: 'Outstanding resistance to weathering, ozone, and steam. Ideal for outdoor applications.', tag: 'Weathering', color: '#3b82f6' },
-  { id: 'R4', title: 'Silicone', desc: 'Superior thermal stability and flexibility. FDA compliant grades for food & pharma.', tag: 'Food Grade', color: '#f43f5e' },
+  { id: 'R4', title: 'Silicone', desc: 'Superior thermal stability and flexibility. FDA compliant grades for food & pharma. Temperature range -60°C to +230°C.', tag: 'Food Grade', color: '#f43f5e' },
   { id: 'R5', title: 'Neoprene', desc: 'Balanced properties with good resistance to oils, chemicals, and outdoor aging.', tag: 'Versatile', color: '#64748b' }
 ];
 
@@ -179,6 +181,31 @@ const steelProducts = [
   },
 ];
 
+const epProducts = [
+  { title: 'Cast Nylon Sheet', slug: 'cast-nylon-sheet', image: '/cast_nylon_sheet.png', specs: [{ label: 'Thickness Range', value: '3mm – 100mm' }, { label: 'Standard Sizes', value: '1ft×1ft, 1mtr×1mtr, 1mtr×2mtr' }] },
+  { title: 'Cast Nylon Rod', slug: 'cast-nylon-rod', image: '/cast_nylon_rod.png', specs: [{ label: 'Diameter Range', value: '15mm – 450mm' }, { label: 'Standard Lengths', value: '300mm, 500mm, 1mtr' }] },
+  { title: 'Nylon Square Rod', slug: 'nylon-rod', image: '/NYLON_Square_Rod.png', specs: [{ label: 'Section Range', value: '20mm – 200mm' }, { label: 'Standard Length', value: '1mtr' }] },
+  { title: 'PVC Sheet', slug: 'pvc-sheet', image: '/PVC_Rigid_sheet.png', specs: [{ label: 'Thickness Range', value: '1mm – 30mm' }, { label: 'Standard Size', value: '4ft × 8ft' }] },
+  { title: 'PP Sheet', slug: 'pp-sheet', image: '/ptfe-sheets-moulded.jpg', specs: [{ label: 'Thickness Range', value: '1mm – 100mm' }, { label: 'Standard Sizes', value: '1mtr×2mtr, 4ft×8ft' }] },
+  { title: 'PP Rod', slug: 'pp-rod', image: '/ptfe-rod-hd.jpg', specs: [{ label: 'Diameter Range', value: '1mm – 100mm' }, { label: 'Standard Lengths', value: '300mm, 1mtr, 2mtr' }] },
+  { title: 'PU Sheet', slug: 'pu-sheet', image: '/PU_Sheet.png', specs: [{ label: 'Thickness Range', value: '2mm – 100mm' }, { label: 'Standard Sizes', value: '1ft×1ft, 1mtr×1mtr, 1mtr×4mtr' }] },
+  { title: 'PU Rod', slug: 'pu-rod', image: '/PU_Rod.png', specs: [{ label: 'Diameter Range', value: '16mm – 200mm' }, { label: 'Standard Lengths', value: '1ft, 1mtr' }] },
+  { title: 'Delrin Sheet', slug: 'delrin-sheet', image: '/Derlin_Sheet.png', specs: [{ label: 'Thickness Range', value: '6mm – 100mm' }, { label: 'Standard Sizes', value: '4ft×2ft, 1mtr×2mtr' }] },
+  { title: 'Delrin Rod', slug: 'delrin-rod', image: '/Derlin_Rod.png', specs: [{ label: 'Diameter Range', value: '12mm – 250mm' }, { label: 'Standard Lengths', value: '300mm, 1mtr' }] },
+  { title: 'PEEK Sheet', slug: 'peek-sheet', image: '/PEEK_Sheet.png', specs: [{ label: 'Thickness Range', value: '5mm – 120mm' }, { label: 'Standard Size', value: '620mm × 1000mm' }] },
+  { title: 'Acrylic Rod', slug: 'acrylic-rod', image: '/Acrylic_Rod.png', specs: [{ label: 'Diameter Range', value: '3mm – 200mm' }, { label: 'Standard Lengths', value: '1mtr, 2mtr' }] },
+  { title: 'Custom EP Components', slug: 'ep-custom-components', image: '/ptfe custom.jfif', specs: [{ label: 'Materials', value: 'Any engineering plastic' }, { label: 'Supply', value: 'As per drawing' }] }
+];
+
+const epGrades = [
+  { id: 'EP1', title: 'Cast Nylon (PA6)', desc: 'High-strength engineering plastic with excellent wear resistance and self-lubrication. Superior to extruded nylon with higher molecular weight and better machinability.', tag: 'Standard', color: '#3b82f6' },
+  { id: 'EP2', title: 'PVC (Rigid uPVC)', desc: 'Excellent chemical resistance for acidic, alkaline, and salt solutions. Weldable for chemical tank and ductwork fabrication.', tag: 'Chemical Resistant', color: '#10b981' },
+  { id: 'EP3', title: 'Polypropylene (PP)', desc: 'Broad chemical resistance, lightweight, weldable. Used for chemical tanks, plating tanks, and food processing equipment.', tag: 'Versatile', color: '#f59e0b' },
+  { id: 'EP4', title: 'Polyurethane (PU)', desc: 'Outstanding abrasion resistance and buffer properties. Used for wear liners, cushioning pads, and stamping equipment dies.', tag: 'Wear Resistant', color: '#ef4444' },
+  { id: 'EP5', title: 'Delrin / POM (Acetal)', desc: 'Precision machinability with excellent dimensional stability in wet environments. Ideal for gears, bearings, and electrical insulation.', tag: 'Precision', color: '#8b5cf6' },
+  { id: 'EP6', title: 'PEEK', desc: 'Premium high-temperature plastic. Service up to 250°C with exceptional chemical resistance. Vacuum compatible for demanding applications.', tag: 'High Temp', color: '#ec4899' },
+];
+
 const steelGrades = [
   { id: 'S1', title: 'SS 304 / 304L', desc: 'Most widely used austenitic grade. C max 0.08% (304) / 0.03% (304L). Ni 8–10.5%, Cr 18–20%. Excellent corrosion resistance for food, chemical, and general industrial use.', tag: 'Standard', color: '#0ea5e9' },
   { id: 'S2', title: 'SS 316 / 316L', desc: 'Molybdenum-bearing grade (Mo 2–3%). C max 0.08% (316) / 0.03% (316L). Ni 10–14%, Cr 16–18%. Superior resistance to chlorides and acids. 316L preferred for welded parts. Actively supplied — MTC with every order.', tag: 'In Active Supply', color: '#6366f1' },
@@ -230,21 +257,21 @@ export default function Products() {
     fontFamily: 'var(--font-outfit), sans-serif'
   };
 
-  const currentProducts = activeCategory === 'ptfe' ? ptfeProducts : activeCategory === 'rubber' ? rubberProducts : steelProducts;
-  const currentGrades = activeCategory === 'ptfe' ? ptfeGrades : activeCategory === 'rubber' ? rubberGrades : steelGrades;
+  const currentProducts = activeCategory === 'ptfe' ? ptfeProducts : activeCategory === 'rubber' ? rubberProducts : activeCategory === 'engineering-plastics' ? epProducts : steelProducts;
+  const currentGrades = activeCategory === 'ptfe' ? ptfeGrades : activeCategory === 'rubber' ? rubberGrades : activeCategory === 'engineering-plastics' ? epGrades : steelGrades;
 
   return (
     <div className="reveal">
       <style jsx>{`
         .layout-container { display: flex; flex-direction: row; min-height: 80vh; background: var(--bg-light); }
         .sidebar { width: 300px; min-width: 0; background: white; border-right: 1px solid var(--border); padding: 4rem 0; display: flex; flex-direction: column; }
-        .content-area { flex: 1; min-width: 0; padding: 4rem; overflow: hidden; }
-        .product-list-container { display: flex; flex-direction: column; gap: 2.5rem; }
-        .product-card-header { padding: 2.5rem; display: flex; alignItems: center; gap: 2rem; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.01); }
-        .product-card-body { padding: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; }
+        .content-area { flex: 1; min-width: 0; padding: 3rem; overflow: hidden; }
+        .product-list-container { display: flex; flex-direction: column; gap: 1.75rem; }
+        .product-card-header { padding: 1.75rem; display: flex; alignItems: center; gap: 1rem; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.01); }
+        .product-card-body { padding: 1.75rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.75rem; }
         .grade-card { padding: 2.5rem; }
 
-        .tabs-header { display: flex; gap: 3rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+        .tabs-header { display: flex; gap: 3rem; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; }
         .tab-btn { 
           padding: 1rem 0; 
           background: transparent; 
@@ -295,7 +322,7 @@ export default function Products() {
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span style={{ color: 'var(--accent)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '3px', fontSize: '0.75rem' }}>Product Catalogue</span>
           <h1 style={{ color: 'white', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginTop: '1.25rem', marginBottom: '1.5rem' }}>
-            {activeCategory === 'ptfe' ? 'PTFE' : activeCategory === 'rubber' ? 'Rubber' : 'Steel'} <span className="gradient-text">Division Portfolio</span>
+            {activeCategory === 'ptfe' ? 'PTFE' : activeCategory === 'rubber' ? 'Rubber' : activeCategory === 'engineering-plastics' ? 'Engineering Plastics' : 'Steel'} <span className="gradient-text">Division Portfolio</span>
           </h1>
         </div>
       </section>
@@ -323,6 +350,24 @@ export default function Products() {
                 }}
               >
                 PTFE Division
+              </button>
+              <button
+                onClick={() => handleCategoryChange('engineering-plastics')}
+                style={{
+                  padding: '1rem 1.5rem',
+                  textAlign: 'left',
+                  background: activeCategory === 'engineering-plastics' ? 'var(--primary)' : 'transparent',
+                  color: activeCategory === 'engineering-plastics' ? 'var(--accent)' : 'var(--text-main)',
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontWeight: '700',
+                  cursor: 'pointer',
+                  transition: 'var(--transition)',
+                  fontSize: '0.9rem',
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                Eng. Plastics
               </button>
               <button
                 onClick={() => handleCategoryChange('rubber')}
@@ -399,15 +444,17 @@ export default function Products() {
 
               {activeTab === 'products' ? (
                 <div className="reveal">
-                  <div style={{ marginBottom: '2.5rem' }}>
+                  <div style={{ marginBottom: '1.75rem' }}>
                     <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}>
-                      {activeCategory === 'ptfe' ? 'Engineered PTFE' : activeCategory === 'rubber' ? 'Industrial Rubber' : 'Steel'} <span style={{ color: 'var(--accent)' }}>Products</span>
+                      {activeCategory === 'ptfe' ? 'Engineered PTFE' : activeCategory === 'rubber' ? 'Industrial Rubber' : activeCategory === 'engineering-plastics' ? 'Engineering Plastics' : 'Steel'} <span style={{ color: 'var(--accent)' }}>Products</span>
                     </h2>
                     <p style={subheadingStyle}>
                       {activeCategory === 'ptfe'
                         ? 'Precision-machined PTFE components for critical industrial applications.'
                         : activeCategory === 'rubber'
                         ? 'High-performance elastomeric solutions for sealing and fluid handling.'
+                        : activeCategory === 'engineering-plastics'
+                        ? 'Advanced engineering plastics for demanding applications across industries.'
                         : 'Structural and stainless steel products — actively supplying to clients across India.'}
                     </p>
                   </div>
@@ -480,7 +527,7 @@ export default function Products() {
                       <div key={i} className="glass-card" style={{ background: 'white', padding: 0, border: '1px solid var(--border)' }}>
                         <div className="product-card-header">
                           <div style={{
-                            width: '120px', height: '100px',
+                            width: '240px', height: '180px',
                             background: 'white',
                             borderRadius: '8px',
                             overflow: 'hidden',
@@ -549,7 +596,7 @@ export default function Products() {
                 </div>
               ) : (
                 <div className="reveal">
-                  <div style={{ marginBottom: '2.5rem' }}>
+                  <div style={{ marginBottom: '1.75rem' }}>
                     <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}>Material <span style={{ color: 'var(--accent)' }}>Grades</span></h2>
                     <p style={subheadingStyle}>
                       {activeCategory === 'ptfe'
@@ -559,7 +606,7 @@ export default function Products() {
                         : 'Steel grades and standards we supply and source for your requirements.'}
                     </p>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2.5rem' }}>
                     {currentGrades.map((grade) => (
                       <div key={grade.id} className="glass-card grade-card" style={{ borderTop: `6px solid ${grade.color}` }}>
                         <div style={{ color: grade.color, fontWeight: '800', fontSize: '0.9rem', marginBottom: '0.75rem', fontFamily: 'var(--font-outfit), sans-serif' }}>GRADE #{grade.id}</div>
@@ -583,7 +630,7 @@ export default function Products() {
                       </div>
                     ))}
                   </div>
-                  <CustomEnquiryCard type={activeCategory === 'ptfe' ? 'PTFE' : activeCategory === 'rubber' ? 'Rubber' : 'Steel'} />
+                  <CustomEnquiryCard type={activeCategory === 'ptfe' ? 'PTFE' : activeCategory === 'rubber' ? 'Rubber' : activeCategory === 'engineering-plastics' ? 'Engineering Plastic' : 'Steel'} />
                 </div>
               )}
             </div>

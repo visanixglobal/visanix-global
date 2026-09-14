@@ -2,19 +2,19 @@ import ProductsClient from './products-client'
 
 export const metadata = {
   title: 'PTFE Products & Engineering Materials | Visanix Global',
-  description: 'Buy PTFE rods, sheets, tubes, gaskets, bushes and rubber seals from Visanix Global — trusted PTFE supplier in Gurugram, India. Custom sizes available.',
+  description: 'Buy PTFE rods, sheets, tubes, gaskets, bushes and rubber seals from Visanix Global — trusted PTFE supplier in Delhi NCR, India. Custom sizes available.',
   alternates: {
     canonical: '/products',
   },
   openGraph: {
     title: 'PTFE Products & Engineering Materials | Visanix Global',
-    description: 'Buy PTFE rods, sheets, tubes, gaskets, bushes and rubber seals from Visanix Global — trusted PTFE supplier in Gurugram, India.',
+    description: 'Buy PTFE rods, sheets, tubes, gaskets, bushes and rubber seals from Visanix Global — trusted PTFE supplier in Delhi NCR, India.',
     url: 'https://www.visanixglobal.com/products',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PTFE Products & Engineering Materials | Visanix Global',
-    description: 'Buy PTFE rods, sheets, tubes, gaskets, bushes and rubber seals from Visanix Global — trusted PTFE supplier in Gurugram, India.',
+    description: 'Buy PTFE rods, sheets, tubes, gaskets, bushes and rubber seals from Visanix Global — trusted PTFE supplier in Delhi NCR, India.',
     images: ['https://www.visanixglobal.com/og-image.png'],
   },
 }

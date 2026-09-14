@@ -24,7 +24,7 @@ export default function Footer() {
   ];
 
   const locationLinks = [
-    { name: 'PTFE Supplier — Gurugram', path: '/ptfe-supplier-gurugram' },
+    { name: 'PTFE Supplier — Delhi NCR', path: '/ptfe-supplier-gurugram' },
     { name: 'PTFE Supplier — Delhi', path: '/ptfe-supplier-delhi' },
     { name: 'PTFE Supplier — India', path: '/ptfe-supplier-india' },
     { name: 'Pharmaceutical Industry', path: '/industries/pharmaceutical' },
@@ -89,7 +89,7 @@ export default function Footer() {
               </Link>
             </div>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem', lineHeight: '1.8', fontFamily: 'var(--font-outfit), sans-serif' }}>
-              Trusted PTFE and Teflon supplier in Gurugram, India. Virgin and filled PTFE grades for chemical, pharma, and industrial manufacturers across India.
+              Based in Delhi NCR, supplying PTFE products and engineering plastics to industrial manufacturers across India.
             </p>
           </div>
 
@@ -177,7 +177,7 @@ export default function Footer() {
                 <div>
                   <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.7rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '4px' }}>Office</span>
                   <p style={{ color: 'white', fontSize: '0.9rem', fontWeight: '700', lineHeight: '1.6', margin: 0 }}>
-                    LGF-72, Sector 30<br />Gurugram, Haryana 122022
+                    B-1/192, Paschim Vihar<br />New Delhi 110063
                   </p>
                 </div>
               </div>
