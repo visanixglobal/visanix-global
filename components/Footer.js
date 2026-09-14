@@ -21,6 +21,10 @@ export default function Footer() {
     { name: 'PTFE Tube', path: '/products/ptfe-tube' },
     { name: 'PTFE Gasket', path: '/products/ptfe-gasket' },
     { name: 'PTFE Grades Guide', path: '/products/ptfe-grades' },
+    { name: 'Cast Nylon Sheet', path: '/engineering-plastics/cast-nylon-sheet' },
+    { name: 'Cast Nylon Rod', path: '/engineering-plastics/cast-nylon-rod' },
+    { name: 'PEEK Sheet', path: '/engineering-plastics/peek-sheet' },
+    { name: 'Delrin Sheet', path: '/engineering-plastics/delrin-sheet' },
   ];
 
   const locationLinks = [

@@ -21,7 +21,7 @@ const ContactPopup = () => {
     if (!hasSeenPopup) {
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 5000);
+      }, 20000);
       return () => clearTimeout(timer);
     }
   }, []);
