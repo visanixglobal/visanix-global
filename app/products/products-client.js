@@ -483,7 +483,7 @@ export default function Products() {
                     )}
                     {currentProducts.map((product, i) => (
                       activeCategory === 'steel' ? (
-                        <div key={i} className="glass-card" style={{ background: 'white', padding: 0, border: '1px solid var(--border)', opacity: product.tag === 'Coming Soon' ? 0.65 : 1 }}>
+                        <div key={`${activeCategory}-${product.title}`} className="glass-card" style={{ background: 'white', padding: 0, border: '1px solid var(--border)', opacity: product.tag === 'Coming Soon' ? 0.65 : 1 }}>
                           <div className="product-card-header" style={{ alignItems: 'center' }}>
                             <div style={{
                               width: '64px', height: '64px', borderRadius: '12px',
@@ -524,7 +524,7 @@ export default function Products() {
                           </div>
                         </div>
                       ) : (
-                      <div key={i} className="glass-card" style={{ background: 'white', padding: 0, border: '1px solid var(--border)' }}>
+                      <div key={`${activeCategory}-${product.title}`} className="glass-card" style={{ background: 'white', padding: 0, border: '1px solid var(--border)' }}>
                         <div className="product-card-header">
                           <div style={{
                             width: '240px', height: '180px',
