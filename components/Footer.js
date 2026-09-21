@@ -167,10 +167,10 @@ export default function Footer() {
                 </div>
                 <div>
                   <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.7rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '4px' }}>Email</span>
-                  <a href="mailto:info@visanixglobal.com" style={{ color: 'white', fontSize: '0.9rem', fontWeight: '700', textDecoration: 'none' }}
+                  <a href="mailto:sahil@visanixglobal.com" style={{ color: 'white', fontSize: '0.9rem', fontWeight: '700', textDecoration: 'none' }}
                     onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'}
                     onMouseLeave={e => e.currentTarget.style.color = 'white'}>
-                    info@visanixglobal.com
+                    sahil@visanixglobal.com
                   </a>
                 </div>
               </div>
