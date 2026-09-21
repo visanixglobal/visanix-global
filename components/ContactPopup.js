@@ -98,7 +98,7 @@ const ContactPopup = () => {
               <h2 style={{ marginBottom: '0.75rem' }}>Submission Error</h2>
               <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
                 Please try again or reach us directly at{' '}
-                <a href="mailto:sahil@visanixglobal.com" style={{ color: 'var(--accent)' }}>sahil@visanixglobal.com</a>.
+                <a href="mailto:info@visanixglobal.com" style={{ color: 'var(--accent)' }}>info@visanixglobal.com</a>.
               </p>
               <button onClick={() => setError(false)} className="submit-btn">Try Again</button>
             </div>

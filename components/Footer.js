@@ -154,14 +154,23 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <div style={{ width: '18px', height: '18px', color: 'white', marginTop: '3px', flexShrink: 0 }}>
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div>
+                  <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.7rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '4px' }}>Proprietor</span>
+                  <p style={{ color: 'white', fontSize: '0.9rem', fontWeight: '700', margin: 0 }}>PD Narang</p>
+                </div>
+              </div>
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
+                <div style={{ width: '18px', height: '18px', color: 'white', marginTop: '3px', flexShrink: 0 }}>
                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </div>
                 <div>
                   <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.7rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px', display: 'block', marginBottom: '4px' }}>Email</span>
-                  <a href="mailto:sahil@visanixglobal.com" style={{ color: 'white', fontSize: '0.9rem', fontWeight: '700', textDecoration: 'none' }}
+                  <a href="mailto:info@visanixglobal.com" style={{ color: 'white', fontSize: '0.9rem', fontWeight: '700', textDecoration: 'none' }}
                     onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'}
                     onMouseLeave={e => e.currentTarget.style.color = 'white'}>
-                    sahil@visanixglobal.com
+                    info@visanixglobal.com
                   </a>
                 </div>
               </div>
