@@ -152,6 +152,15 @@ export default function Footer() {
           <div>
             <h4 style={headingStyle}>Contact</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', paddingBottom: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                <div style={{ width: '18px', height: '18px', color: 'white', marginTop: '3px', flexShrink: 0 }}>
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div>
+                  <span style={{ color: 'var(--accent)', fontWeight: '800', fontSize: '0.7rem', textTransform: 'uppercase', marginBottom: '1.25rem', letterSpacing: '1px', display: 'block' }}>Head - Operations & Business Development</span>
+                  <p style={{ color: 'white', fontSize: '0.9rem', fontWeight: '700', margin: '0.5rem 0 0' }}>PD Narang</p>
+                </div>
+              </div>
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <div style={{ width: '18px', height: '18px', color: 'white', marginTop: '3px', flexShrink: 0 }}>
                   <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
