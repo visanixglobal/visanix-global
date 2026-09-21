@@ -156,7 +156,18 @@ export default function Contact() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div className="glass-card" style={{ padding: '2rem', textAlign: 'left', border: '1px solid var(--border)', background: 'white' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                    <h4 style={{ fontSize: '1.3rem', marginBottom: '0.25rem' }}>Sahil Khurana</h4>
+                    <h4 style={{ fontSize: '1.3rem', marginBottom: '0.25rem' }}>P.D. Narang</h4>
+                    <span style={{ fontSize: '1.5rem' }}>👤</span>
+                  </div>
+                  <p style={{ color: 'var(--accent)', fontWeight: '800', fontSize: '0.7rem', textTransform: 'uppercase', marginBottom: '1.25rem', letterSpacing: '1px' }}>Proprietor</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    <p style={{ fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '10px' }}>                    </p>
+                  </div>
+                </div>
+
+                <div className="glass-card" style={{ padding: '2rem', textAlign: 'left', border: '1px solid var(--border)', background: 'white' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <h4 style={{ fontSize: '1.3rem', marginBottom: '0.25rem' }}>Sahil</h4>
                     <span style={{ fontSize: '1.5rem' }}>👤</span>
                   </div>
                   <p style={{ color: 'var(--accent)', fontWeight: '800', fontSize: '0.7rem', textTransform: 'uppercase', marginBottom: '1.25rem', letterSpacing: '1px' }}>Head - Operations & Business Development</p>
