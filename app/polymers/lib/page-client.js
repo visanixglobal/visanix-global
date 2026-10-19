@@ -93,18 +93,21 @@ export default function Home() {
 
         <div className="container" style={{ position: 'relative', zIndex: 10 }}>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-              <span style={{ height: '1px', width: '30px', background: 'var(--accent)' }}></span>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem', maxWidth: '100%' }}>
+              <span style={{ height: '1px', width: '30px', background: 'var(--accent)', flexShrink: 0 }}></span>
               <span style={{
                 color: 'var(--accent)',
                 fontWeight: '700',
                 textTransform: 'uppercase',
-                letterSpacing: '4px',
-                fontSize: '0.75rem'
+                letterSpacing: 'clamp(1px, 0.5vw, 4px)',
+                fontSize: 'clamp(0.6rem, 2vw, 0.75rem)',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
               }}>
                 Strategic Global Sourcing
               </span>
-              <span style={{ height: '1px', width: '30px', background: 'var(--accent)' }}></span>
+              <span style={{ height: '1px', width: '30px', background: 'var(--accent)', flexShrink: 0 }}></span>
             </div>
 
             <h1 style={{
@@ -123,7 +126,7 @@ export default function Home() {
             </h1>
 
             <p style={{
-              fontSize: '1.35rem',
+              fontSize: 'clamp(1rem, 3.5vw, 1.35rem)',
               color: 'rgba(255,255,255,1)',
               marginBottom: '4rem',
               lineHeight: '1.7',

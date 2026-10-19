@@ -10,8 +10,9 @@ export default function RootChrome({ children }) {
   const pathname = usePathname();
   // Polymers routes have their own layout (navbar/footer/wrapper)
   const isPolymers = pathname?.startsWith('/polymers');
+  const isImpex = pathname?.startsWith('/impex');
 
-  if (isPolymers) {
+  if (isPolymers || isImpex) {
     // Let the polymers layout handle everything — no extra chrome
     return <>{children}</>;
   }

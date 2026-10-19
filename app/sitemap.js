@@ -1,84 +1,121 @@
+const BASE = 'https://www.visanixglobal.com';
+
 export default function sitemap() {
-  const baseUrl = 'https://www.visanixglobal.com';
+  const now = new Date().toISOString();
 
-  const staticRoutes = [
-    { url: `${baseUrl}/`, priority: 1.0, changeFrequency: 'weekly', lastModified: '2026-05-01' },
-    { url: `${baseUrl}/products`, priority: 0.9, changeFrequency: 'weekly', lastModified: '2026-05-28' },
-    { url: `${baseUrl}/about`, priority: 0.8, changeFrequency: 'monthly', lastModified: '2026-05-01' },
-    { url: `${baseUrl}/contact`, priority: 0.8, changeFrequency: 'monthly', lastModified: '2026-05-01' },
-    { url: `${baseUrl}/industries`, priority: 0.7, changeFrequency: 'monthly', lastModified: '2026-05-28' },
-    { url: `${baseUrl}/privacy-policy`, priority: 0.2, changeFrequency: 'yearly', lastModified: '2026-05-01' },
-    { url: `${baseUrl}/terms-of-service`, priority: 0.2, changeFrequency: 'yearly', lastModified: '2026-05-01' },
-    { url: `${baseUrl}/cookie-policy`, priority: 0.2, changeFrequency: 'yearly', lastModified: '2026-05-01' },
+  // ── Root site routes ──────────────────────────────────────────────────────
+  const root = [
+    { url: `${BASE}/`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${BASE}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/products`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE}/industries`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/calculator`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
+    { url: `${BASE}/ptfe-supplier-delhi`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/ptfe-supplier-gurugram`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/ptfe-supplier-india`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/engineering-plastics`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE}/privacy-policy`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${BASE}/terms-of-service`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${BASE}/cookie-policy`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
   ];
 
-  const productSlugs = [
-    'ptfe-rod', 'ptfe-sheet-skived', 'ptfe-sheet-moulded',
-    'ptfe-tube', 'ptfe-bush', 'ptfe-ball',
-    'ptfe-gland', 'ptfe-gasket', 'ptfe-ring', 'ptfe-tape',
-  ];
-
-  const productRoutes = productSlugs.map((slug) => ({
-    url: `${baseUrl}/products/${slug}`,
-    priority: 0.85,
+  // Root product slugs
+  const rootProducts = [
+    'ptfe-rod', 'ptfe-sheet-skived', 'ptfe-sheet-moulded', 'ptfe-tube',
+    'ptfe-bush', 'ptfe-ball', 'ptfe-gland', 'ptfe-gasket', 'ptfe-ring', 'ptfe-tape',
+  ].map(slug => ({
+    url: `${BASE}/products/${slug}`,
+    lastModified: now,
     changeFrequency: 'monthly',
-    lastModified: '2026-05-28',
+    priority: 0.7,
   }));
 
-  const productStaticRoutes = [
-    { url: `${baseUrl}/products/ptfe-grades`, priority: 0.85, changeFrequency: 'monthly', lastModified: '2026-05-28' },
-  ];
-
-  const epSlugs = [
-    'cast-nylon-sheet', 'cast-nylon-rod', 'nylon-rod',
-    'pu-sheet', 'pu-rod', 'pu-rod-seal', 'pu-piston-seal', 'pu-wiper-seal',
-    'pvc-sheet',
-    'pp-sheet', 'pp-rod',
-    'delrin-sheet', 'delrin-rod',
-    'peek-sheet',
-    'acrylic-rod',
-    'epoxy-laminated-sheet',
-    'silicone-sheet', 'silicone-tube',
-    'insulation-rod',
-    'ep-custom-components',
-  ];
-
-  const epCategoryRoute = [
-    { url: `${baseUrl}/engineering-plastics`, priority: 0.9, changeFrequency: 'weekly', lastModified: '2026-07-22' },
-  ];
-
-  const epProductRoutes = epSlugs.map((slug) => ({
-    url: `${baseUrl}/engineering-plastics/${slug}`,
-    priority: 0.85,
+  // Root engineering plastics slugs
+  const rootEP = [
+    'cast-nylon-sheet', 'cast-nylon-rod', 'nylon-rod', 'pvc-sheet', 'pp-sheet',
+    'pp-rod', 'pu-sheet', 'pu-rod', 'delrin-sheet', 'delrin-rod', 'peek-sheet',
+    'acrylic-rod', 'ep-custom-components',
+  ].map(slug => ({
+    url: `${BASE}/engineering-plastics/${slug}`,
+    lastModified: now,
     changeFrequency: 'monthly',
-    lastModified: '2026-07-22',
+    priority: 0.7,
   }));
 
-  const locationRoutes = [
-    { url: `${baseUrl}/ptfe-supplier-gurugram`, priority: 0.7, changeFrequency: 'monthly', lastModified: '2026-05-28' },
-    { url: `${baseUrl}/ptfe-supplier-delhi`, priority: 0.7, changeFrequency: 'monthly', lastModified: '2026-05-28' },
-    { url: `${baseUrl}/ptfe-supplier-india`, priority: 0.8, changeFrequency: 'monthly', lastModified: '2026-05-28' },
-  ];
-
-  const industrySlugs = [
+  // Root industry slugs
+  const rootIndustries = [
     'pharmaceutical', 'chemical-processing', 'oil-and-gas',
     'food-processing', 'water-treatment', 'industrial-manufacturing',
-  ];
-
-  const industryRoutes = industrySlugs.map((slug) => ({
-    url: `${baseUrl}/industries/${slug}`,
-    priority: 0.6,
+  ].map(slug => ({
+    url: `${BASE}/industries/${slug}`,
+    lastModified: now,
     changeFrequency: 'monthly',
-    lastModified: '2026-05-28',
+    priority: 0.6,
   }));
 
+  // ── Polymers section (/polymers) ──────────────────────────────────────────
+  const polymers = [
+    { url: `${BASE}/polymers`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${BASE}/polymers/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/polymers/products`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE}/polymers/industries`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/polymers/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/polymers/engineering-plastics`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE}/polymers/ptfe-supplier-delhi`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/polymers/ptfe-supplier-gurugram`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/polymers/ptfe-supplier-india`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/polymers/products/ptfe-grades`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+  ];
+
+  const polymersProducts = [
+    'ptfe-rod', 'ptfe-sheet-skived', 'ptfe-sheet-moulded', 'ptfe-tube',
+    'ptfe-bush', 'ptfe-ball', 'ptfe-gland', 'ptfe-gasket', 'ptfe-ring', 'ptfe-tape',
+  ].map(slug => ({
+    url: `${BASE}/polymers/products/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  const polymersEP = [
+    'cast-nylon-sheet', 'cast-nylon-rod', 'nylon-rod', 'pvc-sheet', 'pp-sheet',
+    'pp-rod', 'pu-sheet', 'pu-rod', 'delrin-sheet', 'delrin-rod', 'peek-sheet',
+    'acrylic-rod', 'ep-custom-components',
+  ].map(slug => ({
+    url: `${BASE}/polymers/engineering-plastics/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  const polymersIndustries = [
+    'pharmaceutical', 'chemical-processing', 'oil-and-gas',
+    'food-processing', 'water-treatment', 'industrial-manufacturing',
+  ].map(slug => ({
+    url: `${BASE}/polymers/industries/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  // ── Impex section (/impex) ────────────────────────────────────────────────
+  const impex = [
+    { url: `${BASE}/impex`, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${BASE}/impex/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE}/impex/products`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE}/impex/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+  ];
+
   return [
-    ...staticRoutes,
-    ...productRoutes,
-    ...productStaticRoutes,
-    ...epCategoryRoute,
-    ...epProductRoutes,
-    ...locationRoutes,
-    ...industryRoutes,
+    ...root,
+    ...rootProducts,
+    ...rootEP,
+    ...rootIndustries,
+    ...polymers,
+    ...polymersProducts,
+    ...polymersEP,
+    ...polymersIndustries,
+    ...impex,
   ];
 }

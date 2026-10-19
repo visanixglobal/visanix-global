@@ -252,26 +252,24 @@ export default function RootLayout({ children }) {
         </div>
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
-            if (window.location.pathname.startsWith('/polymers')) {
-              var loader = document.getElementById('page-loader');
-              var logo = document.getElementById('loader-logo');
-              var brand = document.querySelector('#page-loader .loader-brand');
-              var spinner = document.querySelector('#page-loader .loader-spinner');
-              var bar = document.querySelector('#page-loader .loader-bar');
-              if (loader) {
-                loader.style.background = '#ffffff';
-              }
-              if (logo) {
-                logo.src = '/visanix-polymers-logo.png';
-                logo.style.height = '120px';
-                logo.style.filter = 'none';
-                logo.style.background = 'transparent';
-              }
+            var path = window.location.pathname;
+            var loader = document.getElementById('page-loader');
+            var logo = document.getElementById('loader-logo');
+            var brand = document.querySelector('#page-loader .loader-brand');
+            var spinner = document.querySelector('#page-loader .loader-spinner');
+            var bar = document.querySelector('#page-loader .loader-bar');
+
+            if (path.startsWith('/polymers')) {
+              if (loader) loader.style.background = '#ffffff';
+              if (logo) { logo.src = '/visanix-polymers-logo.png'; logo.style.height = '120px'; logo.style.filter = 'none'; logo.style.background = 'transparent'; }
               if (brand) brand.style.display = 'none';
-              if (spinner) {
-                spinner.style.borderColor = 'rgba(232,160,0,0.15)';
-                spinner.style.borderTopColor = '#E8A000';
-              }
+              if (spinner) { spinner.style.borderColor = 'rgba(232,160,0,0.15)'; spinner.style.borderTopColor = '#E8A000'; }
+              if (bar) bar.style.background = '#E8A000';
+            } else if (path.startsWith('/impex')) {
+              if (loader) loader.style.background = '#ffffff';
+              if (logo) { logo.src = '/visanix-impex-logo.png'; logo.style.height = '120px'; logo.style.filter = 'none'; logo.style.background = 'transparent'; }
+              if (brand) brand.style.display = 'none';
+              if (spinner) { spinner.style.borderColor = 'rgba(232,160,0,0.15)'; spinner.style.borderTopColor = '#E8A000'; }
               if (bar) bar.style.background = '#E8A000';
             }
           })();
