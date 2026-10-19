@@ -1,10 +1,6 @@
 import './globals.css'
 import { Outfit, Montserrat, Nunito } from 'next/font/google'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
-import ContactPopup from '@/components/ContactPopup'
-import ClientLayoutWrapper from '@/components/ClientLayoutWrapper'
+import RootChrome from '@/components/RootChrome'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -141,7 +137,7 @@ export default function RootLayout({ children }) {
         }} />
         <style dangerouslySetInnerHTML={{
           __html: `
-          .navbar-logo { height: 90px !important; width: auto !important; max-height: 90px !important; }
+          .navbar-logo { height: 64px !important; width: auto !important; max-height: 64px !important; }
           .site-header { background: #0A1128; }
           body { background: #ffffff; }
           #page-loader {
@@ -166,7 +162,7 @@ export default function RootLayout({ children }) {
             gap: 0.5rem;
           }
           #page-loader img {
-            height: 72px;
+            height: 120px;
             width: auto;
             filter: brightness(1.2) drop-shadow(0 0 0 #0A1128);
             background: #0A1128;
@@ -244,25 +240,45 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div id="page-loader">
-          <div class="loader-inner">
-            <img src="/Logo only.png" alt="Visanix Global" />
-            <div class="loader-brand">
-              <div class="loader-name">VISANIX <span>Global</span></div>
-              <div class="loader-tagline">DELIVERING INDUSTRIAL EXCELLENCE WORLDWIDE</div>
+          <div className="loader-inner">
+            <img id="loader-logo" src="/Logo only.png" alt="Visanix" />
+            <div className="loader-brand">
+              <div className="loader-name" id="loader-name">VISANIX <span id="loader-name-span">Global</span></div>
+              <div className="loader-tagline" id="loader-tagline">DELIVERING INDUSTRIAL EXCELLENCE WORLDWIDE</div>
             </div>
           </div>
-          <div class="loader-spinner"></div>
-          <div class="loader-bar"></div>
+          <div className="loader-spinner"></div>
+          <div className="loader-bar"></div>
         </div>
-        <Navbar />
-        <div className="page-content-wrapper">
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            if (window.location.pathname.startsWith('/polymers')) {
+              var loader = document.getElementById('page-loader');
+              var logo = document.getElementById('loader-logo');
+              var brand = document.querySelector('#page-loader .loader-brand');
+              var spinner = document.querySelector('#page-loader .loader-spinner');
+              var bar = document.querySelector('#page-loader .loader-bar');
+              if (loader) {
+                loader.style.background = '#ffffff';
+              }
+              if (logo) {
+                logo.src = '/visanix-polymers-logo.png';
+                logo.style.height = '120px';
+                logo.style.filter = 'none';
+                logo.style.background = 'transparent';
+              }
+              if (brand) brand.style.display = 'none';
+              if (spinner) {
+                spinner.style.borderColor = 'rgba(232,160,0,0.15)';
+                spinner.style.borderTopColor = '#E8A000';
+              }
+              if (bar) bar.style.background = '#E8A000';
+            }
+          })();
+        `}} />
+        <RootChrome>
           {children}
-        </div>
-        <ClientLayoutWrapper>
-          <WhatsAppButton />
-          <ContactPopup />
-        </ClientLayoutWrapper>
-        <Footer />
+        </RootChrome>
       </body>
     </html>
   )

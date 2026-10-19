@@ -3,6 +3,15 @@ const nextConfig = {
     images: {
         formats: ['image/webp', 'image/avif'],
     },
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/polymers',
+                permanent: false,
+            },
+        ];
+    },
     async headers() {
         return [
             {

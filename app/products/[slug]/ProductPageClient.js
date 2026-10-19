@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function ProductPageClient({ product }) {
+export default function ProductPageClient({ product, brand = 'Visanix Global', basePath = '' }) {
     return (
         <div className="reveal">
             {/* Hero */}
@@ -16,9 +16,9 @@ export default function ProductPageClient({ product }) {
                 <div className="bg-dots" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></div>
                 <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                     <nav style={{ marginBottom: '1.5rem', fontSize: '0.85rem', opacity: 0.7 }}>
-                        <Link href="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
+                        <Link href={basePath || '/'} style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
                         <span style={{ margin: '0 0.5rem' }}>›</span>
-                        <Link href="/products" style={{ color: 'white', textDecoration: 'none' }}>Products</Link>
+                        <Link href={`${basePath}/products`} style={{ color: 'white', textDecoration: 'none' }}>Products</Link>
                         <span style={{ margin: '0 0.5rem' }}>›</span>
                         <span style={{ color: 'var(--accent)' }}>{product.title}</span>
                     </nav>
@@ -26,7 +26,7 @@ export default function ProductPageClient({ product }) {
                         PTFE Division
                     </span>
                     <h1 style={{ color: 'white', fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginTop: '1.25rem', marginBottom: '1.5rem' }}>
-                        {product.title} <span className="gradient-text">by Visanix Global</span>
+                        {product.title} <span className="gradient-text">by {brand}</span>
                     </h1>
                     <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: '600px', fontSize: '1.1rem', lineHeight: '1.7', fontFamily: 'var(--font-outfit), sans-serif' }}>
                         {product.heroDescription}
